@@ -14,10 +14,10 @@ $(function() {
 		else
 		{
 			$("#flash").show();
-			$("#flash").fadeIn(400).html('<img src="/img/ajax-loader.gif" align="absmiddle">&nbsp;<span class="loading">Loading Comment...</span>');
+			$("#flash").fadeIn(400).html('<img src="/continentenuovo/img/ajax-loader.gif" align="absmiddle">&nbsp;<span class="loading">Loading Comment...</span>');
 			$.ajax({
 				type: "POST",
-				url: "commentajax.php",
+				url: "js/commentajax.php",
 				data: dataString,
 				cache: false,
 				success: function(html){
@@ -36,8 +36,5 @@ $(function() {
 		}
 		return false;
 	});
-
-
-
 });
 
