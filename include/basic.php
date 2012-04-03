@@ -19,6 +19,31 @@ $phpbb_url = "/phpbb/";
 ## forse si puo' togliere
 $root_path = '/var/www/sw/cnuovo/';
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###
+### FUNZIONI
+###
+
+
+
 #parametri di input:
 # root_path = path per arrivare alla directory base dei template
 # redir = ridirezione della pagina dopo il login
@@ -36,9 +61,12 @@ function miologin($root_path, $redir , $phpbb_url){
         return $xxx;
 }
 
-function eddairegistrati(){
-
-}
+#parametri di input:
+# root_path = path per arrivare alla directory base dei template
+# firstpage = ridirezione della pagina dopo il logout
+# user = variabile che contiene informazioni dell'utente da "uccidere"
+# output
+# ritorna il codice html del logout
 
 function miologout($root_path, $user, $firstpage){
         $user->session_kill();
@@ -50,6 +78,11 @@ function miologout($root_path, $user, $firstpage){
         $xxx = $tpl->get();
         return $xxx;
 }
+
+function eddairegistrati(){
+
+}
+
 
 
 ?>
