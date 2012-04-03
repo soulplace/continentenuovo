@@ -40,13 +40,17 @@ function eddairegistrati(){
 
 }
 
-function miologout($user, $firstpage, $phpbb_url){
+function miologout($root_path, $user, $firstpage){
         $user->session_kill();
         $user->session_begin();
-        echo "<form method='post' action='" . $firstpage . "'>\n";
-        echo "<input type='submit' value='Log out' name='logout' />\n";
-        echo "</form>\n";
+        $tpl = new HTML_Template_IT($root_path . "/templates/default/");
+        $tpl->loadTemplatefile("logout.tpl.htm", true, true);
+        $tpl->setVariable("PAGE", "$firstpage") ;
+        $tpl->parse("logout");
+        $xxx = $tpl->get();
+        return $xxx;
 }
+
 
 ?>
 
