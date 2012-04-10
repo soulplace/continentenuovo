@@ -61,3 +61,43 @@ ping github.com
 ping google.it
 ping 192.168.0.1
 su
+cd /var/www/continentenuovo/
+git commit -a -m "template with comment"
+git add
+git push
+git add .
+git push
+git commit -a
+pwd
+ls- la
+ls -la
+git add commentajax.php css/ img/ include/ index.php js/ templates/ test/
+git commint -m "test con template"
+git commit -m "test con template"
+git push
+sudo halt
+su 
+pwd
+cd /var/www/continentenuovo/
+ls -la
+git add page.php 
+git commit -m "struttura"
+git push
+cd ..
+git add continentenuovo/
+cd continentenuovo/
+ls -la
+git add img/ include/ index.php js/ page.php templates/
+git commit -m "struttura"
+git push
+git add db/
+git commit -m "database"
+git push
+git pull
+git push
+su
+su
+cd /var/www/continentenuovo/
+git pull
+sudo halt
+su

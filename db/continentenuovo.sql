@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generato il: 03 apr, 2012 at 12:03 PM
+-- Generato il: 10 apr, 2012 at 03:10 PM
 -- Versione MySQL: 5.1.49
 -- Versione PHP: 5.3.3-7+squeeze8
 
@@ -80,9 +80,6 @@ CREATE TABLE IF NOT EXISTS `songs` (
 --
 -- Dump dei dati per la tabella `songs`
 --
--- TODO 
--- direi che questa tabella va agganciata in un qualche modo al template
--- della pagina bio dell'utente e delle band 
 
 
 -- --------------------------------------------------------
@@ -113,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 CREATE TABLE IF NOT EXISTS `votes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_voter` mediumint(8) DEFAULT NULL,
-  `id_voted` mediumint(8) DEFAULT NULL,
+  `id_voted` int(11) DEFAULT NULL COMMENT 'id della tabella songs',
   `ip` varchar(16) DEFAULT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
