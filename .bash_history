@@ -101,3 +101,35 @@ cd /var/www/continentenuovo/
 git pull
 sudo halt
 su
+clear
+ls -la
+cd templates/
+ls -la
+cd default/
+ls -la
+nano comment.tpl.htm 
+exit
+cd /var/www/continentenuovo/
+ls -la
+mail
+su user
+exit
+ cd /var/www/continentenuovo/
+ls -la
+exit
+nano .bashrc 
+cp .bashrc bashrc_old
+cd
+pwd
+cd /home/continentenuovo/
+ls -la
+cp .bashrc bashrc_old
+nano .bashrc
+ls -la
+rm .bashrc
+nano .bashrc
+ecit
+exit
+exit
+ls -la
+exit

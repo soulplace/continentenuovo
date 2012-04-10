@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generato il: 10 apr, 2012 at 03:10 PM
+-- Generato il: 10 apr, 2012 at 04:11 PM
 -- Versione MySQL: 5.1.49
 -- Versione PHP: 5.3.3-7+squeeze8
 
@@ -18,6 +18,26 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `continentenuovo`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `bio`
+--
+
+CREATE TABLE IF NOT EXISTS `bio` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` mediumint(8) NOT NULL,
+  `bio` text,
+  `message` text,
+  `video` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT=' l''email e il nome vengono presi dal db del forum' AUTO_INCREMENT=1 ;
+
+--
+-- Dump dei dati per la tabella `bio`
+--
+
 
 -- --------------------------------------------------------
 
@@ -91,8 +111,6 @@ CREATE TABLE IF NOT EXISTS `songs` (
 CREATE TABLE IF NOT EXISTS `users` (
   `id_phpbb` mediumint(8) NOT NULL DEFAULT '0',
   `role` int(2) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
-  `message` text,
   PRIMARY KEY (`id_phpbb`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
