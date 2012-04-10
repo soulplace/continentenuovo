@@ -80,6 +80,9 @@ CREATE TABLE IF NOT EXISTS `songs` (
 --
 -- Dump dei dati per la tabella `songs`
 --
+-- TODO 
+-- direi che questa tabella va agganciata in un qualche modo al template
+-- della pagina bio dell'utente e delle band 
 
 
 -- --------------------------------------------------------
