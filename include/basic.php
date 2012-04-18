@@ -82,8 +82,18 @@ function miologout($root_path, $user, $firstpage){
 function eddairegistrati(){
 
 }
-
-
-
+//classe per la gestione del DB
+# $dbhost = host  database
+# $dbname = nome db
+# $dbuser = utente db
+# $dbpass = pwd db
+$dbhost = "localhost";
+$dbname = "continentenuovo";
+$dbuser = "continentenuovo";
+$dbpass = "bnqtj8uEMdbX3Snv";
+include($_SERVER["DOCUMENT_ROOT"]."/continentenuovo/include/class.gestdb.php");
+$gestdb = new gestdb();
+$db = $gestdb -> conn_db( $dbhost , $dbuser , $dbpass );
+$gestdb -> use_db( $dbname , $db );
 ?>
 
