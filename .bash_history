@@ -133,3 +133,28 @@ exit
 exit
 ls -la
 exit
+sh1n1g4mi
+clear
+git commit -m "modifiche database"
+git push
+git commit -a
+git commit -m "modifiche database"
+git push
+c
+cd /var/www/continentenuovo/
+git pull
+git pull
+git pull
+mysqldump -u root -p sh1n1g4mi continentenuovo > continentenuovo.sql
+mysqldump  continentenuovo > continentenuovo.sql
+mysqldump -u root  continentenuovo > continentenuovo.sql
+mysqldump -u[root] -p[sh1n1g4mi]  continentenuovo > continentenuovo.sql
+su
+cd
+git commit -a
+git push
+git commit -a
+git push
+git commit -a
+git push
+su

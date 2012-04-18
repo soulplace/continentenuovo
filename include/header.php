@@ -14,4 +14,5 @@ $tpl->setVariable("TITLE", $title) ;
 $tpl->setVariable("DESCRIPTION", $description) ;
 $tpl->parse("header");
 $tpl->show();  
+include($_SERVER["DOCUMENT_ROOT"]."/continentenuovo/include/basic.php");
 ?>
