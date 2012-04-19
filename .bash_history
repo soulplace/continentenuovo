@@ -158,3 +158,30 @@ git push
 git commit -a
 git push
 su
+cd
+pwd
+git pull
+git pull
+ls -la
+cd doc
+
+git commit -a
+git push
+cd ..
+git add js/
+git commit -a
+git commit -a
+git push
+git add include/
+git push
+git commit -a
+git push
+git add 
+git add .
+git commit -a
+git push
+su
+cd
+git pull
+git pull
+su

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generato il: 10 apr, 2012 at 04:11 PM
+-- Generato il: 19 apr, 2012 at 10:27 AM
 -- Versione MySQL: 5.1.49
 -- Versione PHP: 5.3.3-7+squeeze8
 
@@ -31,13 +31,16 @@ CREATE TABLE IF NOT EXISTS `bio` (
   `bio` text,
   `message` text,
   `video` varchar(255) DEFAULT NULL,
+  `upload_timestamp` timestamp NULL DEFAULT NULL COMMENT 'atttenzione: inserire solo il time di upload,non di modifica',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT=' l''email e il nome vengono presi dal db del forum' AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT=' l''email e il nome vengono presi dal db del forum' AUTO_INCREMENT=2 ;
 
 --
 -- Dump dei dati per la tabella `bio`
 --
 
+INSERT INTO `bio` (`id`, `id_user`, `bio`, `message`, `video`, `upload_timestamp`) VALUES
+(1, 1, 'bio test', 'message test', 'http://vimeo.com/38514156', '2012-04-18 15:31:12');
 
 -- --------------------------------------------------------
 
@@ -92,15 +95,22 @@ CREATE TABLE IF NOT EXISTS `songs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_user` mediumint(8) DEFAULT NULL,
   `song` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
   `upload_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `editable` varchar(1) NOT NULL DEFAULT 'y',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dump dei dati per la tabella `songs`
 --
 
+INSERT INTO `songs` (`id`, `id_user`, `song`, `title`, `upload_time`, `editable`) VALUES
+(1, 1, 'someday.mp3', 'canzone test', '2012-04-18 17:28:32', 'y'),
+(0, 3, 'someday.mp3', 'canzone test 3', '2012-04-18 17:28:32', 'y'),
+(3, 2, 'someday.mp3', 'canzone test 2', '2012-04-18 17:28:32', 'y'),
+(4, 4, 'someday.mp3', 'canzone test 4', '2012-04-18 17:28:32', 'y'),
+(5, 5, 'someday.mp3', 'canzone test 5', '2012-04-18 17:28:32', 'y');
 
 -- --------------------------------------------------------
 
@@ -118,6 +128,12 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dump dei dati per la tabella `users`
 --
 
+INSERT INTO `users` (`id_phpbb`, `role`) VALUES
+(1, 0),
+(2, 2),
+(3, 2),
+(4, 2),
+(5, 2);
 
 -- --------------------------------------------------------
 
