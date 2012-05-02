@@ -1,3 +1,9 @@
-<? include($_SERVER["DOCUMENT_ROOT"]."/continentenuovo/include/header.php");?>
-<? include($_SERVER["DOCUMENT_ROOT"]."/continentenuovo/include/home.php");?>
-<? include($_SERVER["DOCUMENT_ROOT"]."/continentenuovo/include/footer.php");?>
+<? 
+
+include('include/basic.php');
+
+include($root_path . "/include/header.php");
+include($root_path . "/include/home.php");
+include($root_path . "/include/footer.php");
+
+?>

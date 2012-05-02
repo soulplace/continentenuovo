@@ -1,5 +1,5 @@
 <?
-include('lib/basic.php');
+include('include/basic.php');
 
 if ($_REQUEST && $_REQUEST["redir"]){
      header('location: ' . $_REQUEST["redir"]);

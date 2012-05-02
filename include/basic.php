@@ -6,7 +6,6 @@ define('IN_PHPBB', true);
 define('PHPBB_ROOT_PATH', '/usr/share/phpbb3/www/');
 $phpEx = substr(strrchr(__FILE__, '.'), 1);
 
-
 $phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : '/usr/share/phpbb3/www/';
 include($phpbb_root_path . 'common.php');
 
@@ -18,6 +17,9 @@ $phpbb_url = "/phpbb/";
 ## directory di base dell'applicazione
 ## forse si puo' togliere
 $root_path = '/var/www/sw/cnuovo/';
+
+$web_url = "/cnuovo/";
+
 
 
 
@@ -68,20 +70,21 @@ function miologin($root_path, $redir , $phpbb_url){
 # output
 # ritorna il codice html del logout
 
-function miologout($root_path, $user, $firstpage){
-        $user->session_kill();
-        $user->session_begin();
+function miologout($root_path, $redir, $firstpage){
         $tpl = new HTML_Template_IT($root_path . "/templates/default/");
         $tpl->loadTemplatefile("logout.tpl.htm", true, true);
         $tpl->setVariable("PAGE", "$firstpage") ;
+        $tpl->setVariable("REDIRECT", $redir);
         $tpl->parse("logout");
         $xxx = $tpl->get();
         return $xxx;
 }
 
+
 function eddairegistrati(){
 
 }
+
 //classe per la gestione del DB
 # $dbhost = host  database
 # $dbname = nome db
@@ -91,9 +94,12 @@ $dbhost = "localhost";
 $dbname = "continentenuovo";
 $dbuser = "continentenuovo";
 $dbpass = "bnqtj8uEMdbX3Snv";
-include($_SERVER["DOCUMENT_ROOT"]."/continentenuovo/include/class.gestdb.php");
+include($root_path . "include/class.gestdb.php");
 $gestdb = new gestdb();
-$db = $gestdb -> conn_db( $dbhost , $dbuser , $dbpass );
-$gestdb -> use_db( $dbname , $db );
+
+## Meglio fare qualche test perche' non funziona se il db non e' impostato
+## e configurato
+## $db = $gestdb -> conn_db( $dbhost , $dbuser , $dbpass );
+## $gestdb -> use_db( $dbname , $db );
 ?>
 
