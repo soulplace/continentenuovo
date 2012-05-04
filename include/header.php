@@ -12,8 +12,8 @@ $tpl = new HTML_Template_IT("./templates/default/");
 $tpl->loadTemplatefile("header.tpl.htm", true, true);
 $tpl->setVariable("TITLE", $title) ;
 $tpl->setVariable("DESCRIPTION", $description) ;
+include("include/basic.php");
 
-include($_SERVER["DOCUMENT_ROOT"]."/continentenuovo/include/basic.php");
 
 $tpl->parse("header");
 $tpl->show();
