@@ -1,19 +1,9 @@
+<div id="login">
+	<?include_once($root_path . "include/login.php");?>
+	<?echo "Bentornato, ".$username;?>
+	<?include_once($root_path . "include/logout.php");?>
+</div>
 <div id="home_page">
-	<div id="menu">
-		<?include_once($root_path . "include/menu.php");?>
-	</div>
-	<div id="login">
-		<?
-		if($loggato){
-			echo "Bentornato, ".$user->data['username_clean'];
-			$ww = miologout($root_path,$_SERVER["REQUEST_URI"], $web_url . "/logout.php");
-      print $ww;
-		}else{
-			$kk = miologin($root_path,$_SERVER["REQUEST_URI"], $phpbb_url);
-      print $kk;
-		}
-		?>
-	</div>
 	<div id="video_home">
 		<?include_once($root_path . "include/video_home.php");?>
 	</div>

@@ -24,7 +24,7 @@ $phpbb_url = "/phpbb/";
 $root_path = '/var/www/continentenuovo/';
 
 $web_url = "/continentenuovo/";
-
+#link al form di registrazioni phpbb
 ###
 ### FUNZIONI
 ###
