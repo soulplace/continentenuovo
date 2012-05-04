@@ -185,3 +185,15 @@ cd
 git pull
 git pull
 su
+cd
+git add .
+git commit -a
+git push
+su -
+cd
+git pull
+su -
+cd
+ls -la
+git pull
+su

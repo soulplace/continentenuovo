@@ -17,7 +17,7 @@ $phpbb_url = "/phpbb/";
 
 ## directory di base dell'applicazione
 ## forse si puo' togliere
-$root_path = '/var/www/sw/cnuovo/';
+$root_path = '/var/www/continentenuovo/';
 
 
 
