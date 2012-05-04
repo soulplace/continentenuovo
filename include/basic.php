@@ -1,5 +1,9 @@
 <?
+/******* VARIABILI DI CONTROLLO *************/
+define('BAND_REGISTRATION',true);
+define('VOTE_SESSION',false);
 
+/*******************************************/
 require_once "HTML/Template/IT.php";
 #su debian e UBUNTU restano cosi'
 define('IN_PHPBB', true);
@@ -18,32 +22,11 @@ $phpbb_url = "/phpbb/";
 ## forse si puo' togliere
 $root_path = '/var/www/continentenuovo/';
 
-$web_url = "/cnuovo/";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$web_url = "/continentenuovo/";
 
 ###
 ### FUNZIONI
 ###
-
 
 
 #parametri di input:
@@ -99,7 +82,7 @@ $gestdb = new gestdb();
 
 ## Meglio fare qualche test perche' non funziona se il db non e' impostato
 ## e configurato
-## $db = $gestdb -> conn_db( $dbhost , $dbuser , $dbpass );
-## $gestdb -> use_db( $dbname , $db );
+$db = $gestdb -> conn_db( $dbhost , $dbuser , $dbpass );
+$gestdb -> use_db( $dbname , $db );
 ?>
 

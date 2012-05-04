@@ -12,7 +12,7 @@ $tpl = new HTML_Template_IT("./templates/default/");
 $tpl->loadTemplatefile("header.tpl.htm", true, true);
 $tpl->setVariable("TITLE", $title) ;
 $tpl->setVariable("DESCRIPTION", $description) ;
-include("include/basic.php");
+//include("include/basic.php");
 
 
 $tpl->parse("header");
