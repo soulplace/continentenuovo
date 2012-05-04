@@ -22,9 +22,9 @@ $user->session_begin();
 $auth->acl($user->data);
 $user->setup();
 if ($user->data['user_id'] == ANONYMOUS) {
-	$loggato = true;
+	$loggato = false;
 } else {
-	$loggato = false;	
+	$loggato = true;	
 }
 
 /******************************************/

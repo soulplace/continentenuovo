@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generato il: 19 apr, 2012 at 10:27 AM
+-- Generato il: 04 mag, 2012 at 01:47 PM
 -- Versione MySQL: 5.1.49
 -- Versione PHP: 5.3.3-7+squeeze8
 
@@ -28,6 +28,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 CREATE TABLE IF NOT EXISTS `bio` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_user` mediumint(8) NOT NULL,
+  `nome_band` varchar(255) DEFAULT NULL,
   `bio` text,
   `message` text,
   `video` varchar(255) DEFAULT NULL,
@@ -39,8 +40,8 @@ CREATE TABLE IF NOT EXISTS `bio` (
 -- Dump dei dati per la tabella `bio`
 --
 
-INSERT INTO `bio` (`id`, `id_user`, `bio`, `message`, `video`, `upload_timestamp`) VALUES
-(1, 1, 'bio test', 'message test', 'http://vimeo.com/38514156', '2012-04-18 15:31:12');
+INSERT INTO `bio` (`id`, `id_user`, `nome_band`, `bio`, `message`, `video`, `upload_timestamp`) VALUES
+(1, 1, NULL, 'bio test', 'message test', 'http://vimeo.com/38514156', '2012-04-18 15:31:12');
 
 -- --------------------------------------------------------
 
