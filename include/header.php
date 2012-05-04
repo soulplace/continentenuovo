@@ -17,4 +17,15 @@ $tpl->setVariable("DESCRIPTION", $description) ;
 
 $tpl->parse("header");
 $tpl->show();
+/************* CONTROLLO LOGIN ************/
+$user->session_begin();
+$auth->acl($user->data);
+$user->setup();
+if ($user->data['user_id'] == ANONYMOUS) {
+	$loggato = true;
+} else {
+	$loggato = false;	
+}
+
+/******************************************/
 ?>

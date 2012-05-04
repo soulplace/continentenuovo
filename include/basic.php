@@ -4,6 +4,7 @@ define('BAND_REGISTRATION',true);
 define('VOTE_SESSION',false);
 
 /*******************************************/
+
 require_once "HTML/Template/IT.php";
 #su debian e UBUNTU restano cosi'
 define('IN_PHPBB', true);
@@ -82,7 +83,7 @@ $gestdb = new gestdb();
 
 ## Meglio fare qualche test perche' non funziona se il db non e' impostato
 ## e configurato
-$db = $gestdb -> conn_db( $dbhost , $dbuser , $dbpass );
-$gestdb -> use_db( $dbname , $db );
+$db_sito = $gestdb -> conn_db( $dbhost , $dbuser , $dbpass );
+$gestdb -> use_db( $dbname , $db_sito );
 ?>
 

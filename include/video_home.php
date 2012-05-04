@@ -1,6 +1,6 @@
 <?
 $sql = "select * from bio join users on bio.id_user = users.id_phpbb where 1 order by bio.upload_timestamp limit 3";
-$result = $gestdb -> value($sql,$db);
+$result = $gestdb -> value($sql,$db_sito);
 $width = "300";
 $height = "220";
 if(count($result)>0){

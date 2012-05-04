@@ -7,7 +7,7 @@
 echo "saaaaaaaaaaaaaaaaaaaaaaaaa";
 
 echo "<br>saaaaaaaaaaaaaaaaaaaaaaaaa";
-include('/var/www/sw/cnuovo/include/basic.php');
+include('continentenuovo/include/basic.php');
 
 $user->session_begin();
 $auth->acl($user->data);
