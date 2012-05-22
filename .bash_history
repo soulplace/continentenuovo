@@ -197,3 +197,36 @@ cd
 ls -la
 git pull
 su
+cd
+ls -la
+git pull
+git commit -a
+cd
+git pull
+git commit -a
+gitu push
+git push
+git pull
+git pull
+git commit -a
+git push
+git pull
+cd /usr/share/phpbb3/www/
+ls -la
+cat /usr/share/phpbb3/www/includes/session.php
+cd ..
+cd
+grep -ri '$db' *
+pwd
+ls -la
+git commit -a
+git push
+git commit -a
+git push
+git add .
+git commit -a
+git push
+git add .
+git commit -a
+git push
+su
