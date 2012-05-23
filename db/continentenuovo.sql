@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generato il: 04 mag, 2012 at 01:47 PM
+-- Generato il: 23 mag, 2012 at 03:27 PM
 -- Versione MySQL: 5.1.49
 -- Versione PHP: 5.3.3-7+squeeze8
 
@@ -32,16 +32,21 @@ CREATE TABLE IF NOT EXISTS `bio` (
   `bio` text,
   `message` text,
   `video` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
   `upload_timestamp` timestamp NULL DEFAULT NULL COMMENT 'atttenzione: inserire solo il time di upload,non di modifica',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT=' l''email e il nome vengono presi dal db del forum' AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT=' l''email e il nome vengono presi dal db del forum' AUTO_INCREMENT=10 ;
 
 --
 -- Dump dei dati per la tabella `bio`
 --
 
-INSERT INTO `bio` (`id`, `id_user`, `nome_band`, `bio`, `message`, `video`, `upload_timestamp`) VALUES
-(1, 1, NULL, 'bio test', 'message test', 'http://vimeo.com/38514156', '2012-04-18 15:31:12');
+INSERT INTO `bio` (`id`, `id_user`, `nome_band`, `bio`, `message`, `video`, `image`, `upload_timestamp`) VALUES
+(1, 1, 'Band test', 'bio test', 'message test', 'http://vimeo.com/38514156', '', '2012-05-23 14:46:14'),
+(2, 2, 'band test 2', 'bio test 2', 'message test2', NULL, NULL, '2012-05-23 14:49:39'),
+(3, 3, 'band test 3', 'bio test 3', 'message test 3', NULL, NULL, '2012-05-23 14:49:39'),
+(8, 4, 'test 4', 'bio 4', 'message tes 4', NULL, NULL, '2012-05-23 14:49:02'),
+(9, 5, 'band 5', 'bio 5 test', 'test message 5', NULL, NULL, '2012-05-23 14:49:02');
 
 -- --------------------------------------------------------
 
@@ -149,9 +154,13 @@ CREATE TABLE IF NOT EXISTS `votes` (
   `ip` varchar(16) DEFAULT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dump dei dati per la tabella `votes`
 --
 
+INSERT INTO `votes` (`id`, `id_voter`, `id_voted`, `ip`, `time`) VALUES
+(1, 5, 1, '192.168.0.31', '2012-05-23 14:45:17'),
+(2, 4, 1, '192.168.0.31', '2012-05-23 14:56:34'),
+(3, 7, 1, '192.168.0.31', '2012-05-23 14:56:34');

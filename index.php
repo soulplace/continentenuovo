@@ -1,7 +1,7 @@
 <? 
 //error reporting, da commentare in produzione
-error_reporting(E_ALL);
-ini_set('display_errors','On');
+//error_reporting(E_ALL);
+//ini_set('display_errors','On');
 //////////////
 
 include('include/basic.php');

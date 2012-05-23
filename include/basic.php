@@ -4,6 +4,9 @@ define('BAND_REGISTRATION',true);
 define('VOTE_SESSION',false);
 
 /*******************************************/
+/*Variabilie per l'header*/
+$title = "Il download dei miei sogni";
+$description ="progetto musicale Continente Nuovo";
 
 require_once "HTML/Template/IT.php";
 #su debian e UBUNTU restano cosi'

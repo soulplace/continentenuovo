@@ -4,9 +4,6 @@
 	<?include_once($root_path . "include/logout.php");?>
 </div>
 <div id="home_page">
-	<div id="video_home">
-		<?include_once($root_path . "include/video_home.php");?>
-	</div>
 	<div id="songs_home">
 		<?include_once($root_path . "include/songs_home.php");?>
 	</div>
