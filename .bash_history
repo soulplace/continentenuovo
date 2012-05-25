@@ -235,3 +235,9 @@ git pull
 git commit -a
 git push
 su
+cd
+git add .
+git commit -a
+git push
+su 
+su
