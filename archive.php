@@ -15,7 +15,7 @@ include('include/basic.php');
 $title = "Tutti gli artisti";
 $description = "tutti gli artisti e le band che partecipano al concorso Il download dei miei sogni."; 
 ?>
-	<? include($_SERVER["DOCUMENT_ROOT"]."/continentenuovo/include/header.php");?>
+	<? include($root_path."/include/header.php");?>
 <?
 $where = "1";
 if($_REQUEST['q']>""){
@@ -23,16 +23,18 @@ if($_REQUEST['q']>""){
 	$where = " title like '%".$q."%' or nome_band like '%".$q."%' or title like '%".$q."%'";
 	$query = "q=".$q;
 }
-$sqlselect = "select DISTINCT songs.id_user,songs.id,title,upload_time,bio.nome_band,bio,image from songs left join bio on bio.id_user = songs.id_user where ".$where;
+$sqlselect = "select DISTINCT bio.id_user,songs.id_user,songs.id,title,upload_time,bio.nome_band,bio,image from songs left join bio on bio.id_user = songs.id_user where ".$where." ";
 //echo $sqlselect;
 $result = $gestdb -> value($sqlselect,$db_sito);
 //conto il risultato della query
 $nrighe = count($result);
 //decido il numero di artisti per pagina
+//N.B. BISOGNA MODIFCARE ANCHE IL TPL e la paginazione
+//RANDOM?
 $nrpag= 2;
 //calcolo il numero delle pagine
 $npag = ceil($nrighe/$nrpag);
-include($_SERVER["DOCUMENT_ROOT"]."/continentenuovo/include/paginazione.php");
+include($root_path."/include/paginazione.php");
 if($_SESSION['FX']['pag'] <= 1){
 	$start = 0;
 }else{
@@ -63,6 +65,7 @@ echo "</pre>";
 				$select = "select COUNT(*) from votes where id_voted = ".$result[$count]['id'];
 				$sql = $gestdb -> value($select,$db_sito);
 			}
+			$tpl->setVariable("ID_USER".$i, $result[$count]['id_user']) ;
 			$tpl->setVariable("NOME_BAND".$i, $result[$count]['nome_band']) ;
 			$tpl->setVariable("IMAGE".$i, $result[$count]['image']) ;
 			$tpl->setVariable("BIO".$i, $result[$count]['bio']) ;
@@ -80,4 +83,4 @@ echo "</pre>";
 	?>
 </div>
 </div>
-<? include($_SERVER["DOCUMENT_ROOT"]."/continentenuovo/include/footer.php");?>
+<? include($root_path."/include/footer.php");?>

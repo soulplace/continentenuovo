@@ -241,3 +241,21 @@ git commit -a
 git push
 su 
 su
+git pull
+cd
+git pull
+git add .
+git commit -a
+git push
+apt-get moo
+top
+top -o cpu
+man top
+top
+su
+cd
+git pull
+nano /etc/resolv.conf
+ping google.it
+su
+exit
