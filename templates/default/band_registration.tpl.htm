@@ -46,18 +46,17 @@ jQuery(document).ready(function() {
 								}
 							  },
 		'onUploadSuccess'		: function(a, b, c) {
-							  alert("Le informazioni sono state caricate correttamente.");
-	              location.href = location.href;
+							  //alert("Le informazioni sono state caricate correttamente.");
+								alert(b);
+	              //location.href = location.href;
 	  						}
 		});
 	
 	$('#invia').click(function() {
 		var errore="";
 		nome_band=encodeURIComponent($.trim($('#nome_band').val()));
-	
 		biografia = $('#biografia').val();
 		messaggio = $('#messaggio').val();
-	
 	  titolo_canzone=encodeURIComponent($.trim($('#titolo_canzone').val()));
 		video_url=encodeURIComponent($.trim($('#video_url').val()));
 		if(nome_band=="") errore += "Nome della Band obbligatorio!\n";
@@ -68,9 +67,8 @@ jQuery(document).ready(function() {
 			 alert("Non posso procedere, i seguenti errori sono stati rilevati:\n"+errore);
 			 errore = "";
 	  } else {
-		$("#canzone").uploadify("settings", "formData", { 'nome_band' : nome_band, 'biografia' : biografia, 'messaggio' : messaggio, 'titolo_canzone' : titolo_canzone });
-		$('#canzone').uploadify('upload','*');
-			
+			$("#canzone").uploadify("settings", "formData", { 'nome_band' : nome_band, 'biografia' : biografia, 'messaggio' : messaggio, 'titolo_canzone' : titolo_canzone });
+			$('#canzone').uploadify('upload','*');
 		}
   });
 	//////// FINE GESTIONE UPLOAD ////////////
