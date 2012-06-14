@@ -3,6 +3,7 @@
 //<![CDATA[
 jQuery(document).ready(function() {
 	//variabili per gli script
+	var uploaded_file ="";
 	var nome_band="";
 	var biografia="";
 	var messaggio="";
@@ -11,39 +12,29 @@ jQuery(document).ready(function() {
 	var video_url="";
 	var errori = 0;
 	//////// GESTIONE EDITOR ////////////
-	var editor = CKEDITOR.replace('biografia', {
-    toolbar :
-      [
-        ['Cut','Copy','Paste','PasteText','PasteFromWord','SelectAll','RemoveFormat'],
-        ['Bold', 'Italic','Underline','Strike', '-', 'BulletedList', '-', 'Link']
-      ],
-    skin : 'v2',
-	  toolbarCanCollapse: false,
-	  resize_enabled: false
-  });
-	var editor = CKEDITOR.replace('messaggio', {
-    toolbar :
-      [
-        ['Cut','Copy','Paste','PasteText','PasteFromWord','SelectAll','RemoveFormat'],
-        ['Bold', 'Italic','Underline','Strike', '-', 'BulletedList', '-', 'Link']
-      ],
-    skin : 'v2',
-	  toolbarCanCollapse: false,
-	  resize_enabled: false
-  });
+	$( '#biografia' ).ckeditor(function() { /* callback code */ }, { skin : 'kama',toolbar :
+    [
+      ['Cut','Copy','Paste','PasteText','PasteFromWord','SelectAll','RemoveFormat'],
+      ['Bold', 'Italic','Underline','Strike', '-', 'BulletedList', '-', 'Link']
+    ] });
+	$( '#messaggio' ).ckeditor	(function() { /* callback code */ }, { skin : 'kama',toolbar :
+	    [
+	      ['Cut','Copy','Paste','PasteText','PasteFromWord','SelectAll','RemoveFormat'],
+	      ['Bold', 'Italic','Underline','Strike', '-', 'BulletedList', '-', 'Link']
+	    ] });
+	
 	//////// FINE GESTIONE EDITOR ////////////
 	//////// GESTIONE UPLOAD ////////////
 	$('#canzone').uploadify({
 		'swf'					: '/continentenuovo/js/uploadify/uploadify.swf',
 		'uploader' 		: '/continentenuovo/exe/registration.exe.php',
 		'multi'				: false,
-		'fileTypeDesc'		: 'Audio File (*.mp3)',
-		'fileTypeExts'			: '*.mp3',
+		'fileTypeDesc': 'Audio File (*.mp3)',
+		'fileTypeExts': '*.mp3',
 		'method'			: 'post',
 		'auto'				: false,
-		'buttonText'		: 'Seleziona una Canzone...',
+		'buttonText'	: 'Seleziona una Canzone...',
 		'width'				: '400',
-		'formData' : { 'nome_band' : nome_band, 'biografia' : biografia, 'messaggio' : messaggio, 'titolo_canzone' : titolo_canzone },
 		'onUploadError'			: function(a, b, c, d) {
 								if (d.type) {
 								  if (d.type == "File Size") {
@@ -55,16 +46,18 @@ jQuery(document).ready(function() {
 								}
 							  },
 		'onUploadSuccess'		: function(a, b, c) {
-							  alert(c);
-	              //location.href = location.href;
-	  }
-	});
+							  alert("Le informazioni sono state caricate correttamente.");
+	              location.href = location.href;
+	  						}
+		});
 	
 	$('#invia').click(function() {
 		var errore="";
 		nome_band=encodeURIComponent($.trim($('#nome_band').val()));
-		biografia=encodeURIComponent($.trim($('#biografia').val(editor.getData())));
-		messaggio=encodeURIComponent($.trim($('#messaggio').val(editor.getData())));;
+	
+		biografia = $('#biografia').val();
+		messaggio = $('#messaggio').val();
+	
 	  titolo_canzone=encodeURIComponent($.trim($('#titolo_canzone').val()));
 		video_url=encodeURIComponent($.trim($('#video_url').val()));
 		if(nome_band=="") errore += "Nome della Band obbligatorio!\n";
@@ -75,11 +68,9 @@ jQuery(document).ready(function() {
 			 alert("Non posso procedere, i seguenti errori sono stati rilevati:\n"+errore);
 			 errore = "";
 	  } else {
-			$('#canzone').uploadify({
-				'formData' : { 'nome_band' : nome_band, 'biografia' : biografia, 'messaggio' : messaggio, 'titolo_canzone' : titolo_canzone },
-			});
-      $('#canzone').uploadify('upload','*')
-			//upload
+		$("#canzone").uploadify("settings", "formData", { 'nome_band' : nome_band, 'biografia' : biografia, 'messaggio' : messaggio, 'titolo_canzone' : titolo_canzone });
+		$('#canzone').uploadify('upload','*');
+			
 		}
   });
 	//////// FINE GESTIONE UPLOAD ////////////
@@ -90,8 +81,8 @@ jQuery(document).ready(function() {
 <input type="hidden" id = "id_user" name="id_user" value="{ID_USER}">
 <ul>
 	<li><span class="label"><label for="nome_band">Nome del gruppo*</label></span><input type="text" name="nome_band" id="nome_band" /></li>
-	<li><span class="label"><label for="biografia">Biografia*</label></span><textarea name="biografia" id="biografia" ></textarea></li>
-	<li><span class="label"><label for="messaggio">Messagio anti pirateria*</label></span><textarea name="messaggio" id="messaggio" ></textarea></li>
+	<li><span class="label"><label for="biografia">Biografia*</label></span><textarea name="biografia" id="biografia" class="biografia" ></textarea></li>
+	<li><span class="label"><label for="messaggio">Messagio anti pirateria*</label></span><textarea name="messaggio" id="messaggio" class="messaggio" ></textarea></li>
 	<li><span class="label"><label for="canzone">Canzone per il concorso* (inserire l'uploader)</label></span><input type="file" name="canzone" id="canzone" size ="66"/></li>
 	<li><span class="label"><label for="titolo_canzone">Titolo canzone*</label></span><input type="text" name="titolo_canzone" id="titolo_canzone" /></li>
 	<li><span class="label"><label for="video_url">Video URL (opzionale)</label></span><input type="text" name="video_url" id="video_url" /></li>

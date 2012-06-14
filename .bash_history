@@ -259,3 +259,9 @@ nano /etc/resolv.conf
 ping google.it
 su
 exit
+cd 
+git pull
+git add .
+git commit -a
+git push
+su 

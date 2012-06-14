@@ -1,7 +1,3 @@
-<link rel="stylesheet" type="text/css" href="/continentenuovo/js/uploadify/uploadify.css" />
-<link href="/continentenuovo/js/ckeditor/ckeditor.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/continentenuovo/js/uploadify/jquery.uploadify-3.1.min.js"></script>
-<script type="text/javascript" src="/continentenuovo/js/ckeditor/ckeditor.js"></script>
 <?
 include_once($root_path . "include/login.php");
 /*echo "<pre>";
