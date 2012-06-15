@@ -3,6 +3,7 @@
 //<![CDATA[
 jQuery(document).ready(function() {
 	//variabili per gli script
+	
 	var uploaded_file ="";
 	var nome_band="";
 	var biografia="";
@@ -25,33 +26,29 @@ jQuery(document).ready(function() {
 	
 	//////// FINE GESTIONE EDITOR ////////////
 	//////// GESTIONE UPLOAD ////////////
-	$('#canzone').uploadify({
-		'swf'					: '/continentenuovo/js/uploadify/uploadify.swf',
-		'uploader' 		: '/continentenuovo/exe/registration.exe.php',
-		'multi'				: false,
-		'fileTypeDesc': 'Audio File (*.mp3)',
-		'fileTypeExts': '*.mp3',
-		'method'			: 'post',
-		'auto'				: false,
-		'buttonText'	: 'Seleziona una Canzone...',
-		'width'				: '400',
-		'onUploadError'			: function(a, b, c, d) {
-								if (d.type) {
-								  if (d.type == "File Size") {
-									alert('ERRORE: ' + a.name + ' è troppo grande: (MAX <?php echo ini_get("upload_max_filesize"); ?>B).');
-								  } else {
-									alert('ERRORE: ' + d.info);
-								  }
-								  errori++;
-								}
-							  },
-		'onUploadSuccess'		: function(a, b, c) {
-							  //alert("Le informazioni sono state caricate correttamente.");
-								alert(b);
-	              //location.href = location.href;
-	  						}
+	if({DISABLE} == true){
+		$(".canzone").hide();
+	}else{
+		$('#canzone').uploadify({
+			'swf'					: '/continentenuovo/js/uploadify/uploadify.swf',
+			'uploader' 		: '/continentenuovo/exe/registration.exe.php',
+			'multi'				: false,
+			'fileTypeDesc': 'Audio File (*.mp3)',
+			'fileTypeExts': '*.mp3',
+			'method'			: 'post',
+			'auto'				: false,
+			'buttonText'	: 'Seleziona una Canzone...',
+			'width'				: '400',
+			'onUploadError'			: function(a, b, c, d) {
+				alert("Attenzione, il file non è stato caricato: " +d);
+			},
+			'onUploadSuccess'		: function(a, b, c) {
+				//alert("Le informazioni sono state caricate correttamente.");
+				alert(b);
+				//location.href = location.href;
+			}
 		});
-	
+	}
 	$('#invia').click(function() {
 		var errore="";
 		nome_band=encodeURIComponent($.trim($('#nome_band').val()));
@@ -67,23 +64,26 @@ jQuery(document).ready(function() {
 			 alert("Non posso procedere, i seguenti errori sono stati rilevati:\n"+errore);
 			 errore = "";
 	  } else {
-			$("#canzone").uploadify("settings", "formData", { 'nome_band' : nome_band, 'biografia' : biografia, 'messaggio' : messaggio, 'titolo_canzone' : titolo_canzone });
-			$('#canzone').uploadify('upload','*');
+			if({DISABLE} == true){
+				//posto tramite ajax
+			}else{
+				$("#canzone").uploadify("settings", "formData", { 'nome_band' : nome_band, 'biografia' : biografia, 'messaggio' : messaggio, 'titolo_canzone' : titolo_canzone });
+				$('#canzone').uploadify('upload','*');
+			}
 		}
   });
 	//////// FINE GESTIONE UPLOAD ////////////
-	
 });
 //]]>
 </script>
 <input type="hidden" id = "id_user" name="id_user" value="{ID_USER}">
 <ul>
-	<li><span class="label"><label for="nome_band">Nome del gruppo*</label></span><input type="text" name="nome_band" id="nome_band" /></li>
-	<li><span class="label"><label for="biografia">Biografia*</label></span><textarea name="biografia" id="biografia" class="biografia" ></textarea></li>
-	<li><span class="label"><label for="messaggio">Messagio anti pirateria*</label></span><textarea name="messaggio" id="messaggio" class="messaggio" ></textarea></li>
-	<li><span class="label"><label for="canzone">Canzone per il concorso* (inserire l'uploader)</label></span><input type="file" name="canzone" id="canzone" size ="66"/></li>
-	<li><span class="label"><label for="titolo_canzone">Titolo canzone*</label></span><input type="text" name="titolo_canzone" id="titolo_canzone" /></li>
-	<li><span class="label"><label for="video_url">Video URL (opzionale)</label></span><input type="text" name="video_url" id="video_url" /></li>
+	<li><span class="label"><label for="nome_band">Nome del gruppo*</label></span><input type="text" name="nome_band" id="nome_band" value="{NOME_GRUPO}"/></li>
+	<li><span class="label"><label for="biografia">Biografia*</label></span><textarea name="biografia" id="biografia" class="biografia" >{BIOGRAFIA}</textarea></li>
+	<li><span class="label"><label for="messaggio">Messagio anti pirateria*</label></span><textarea name="messaggio" id="messaggio" class="messaggio" >{MESSAGGIO}</textarea></li>
+	<li class="canzone"><span class="label"><label for="canzone">Canzone per il concorso* </label></span><input type="file" name="canzone" id="canzone" size ="66" {DISABLED}/></li>
+	<li><span class="label"><label for="titolo_canzone">Titolo canzone*</label></span><input type="text" name="titolo_canzone" id="titolo_canzone" value="{TITOLO_CANZONE}"/></li>
+	<li><span class="label"><label for="video_url">Video URL (opzionale)</label></span><input type="text" name="video_url" id="video_url" value="{VIDEO}" /></li>
 </ul>	
 	<li><input type="button" name="invia" id="invia" value="Invia i dati!" /></li>
 </ul>

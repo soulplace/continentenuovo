@@ -265,3 +265,16 @@ git add .
 git commit -a
 git push
 su 
+pwd
+git add .
+git push
+git commit -a
+git push
+su
+cd
+git pull
+git add .
+git commit -a
+git push
+su
+su
