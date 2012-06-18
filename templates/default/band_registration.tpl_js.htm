@@ -25,7 +25,30 @@ jQuery(document).ready(function() {
 	    ] });
 	
 	//////// FINE GESTIONE EDITOR ////////////
-	
+	//////// GESTIONE UPLOAD ////////////
+	/*if({DISABLE} == true){
+		$(".canzone").hide();
+	}else{
+		$('#canzone').uploadify({
+			'swf'					: '/continentenuovo/js/uploadify/uploadify.swf',
+			'uploader' 		: '/continentenuovo/exe/registration.exe.php',
+			'multi'				: false,
+			'fileTypeDesc': 'Audio File (*.mp3)',
+			'fileTypeExts': '*.mp3',
+			'method'			: 'post',
+			'auto'				: false,
+			'buttonText'	: 'Seleziona una Canzone...',
+			'width'				: '400',
+			'onUploadError'			: function(a, b, c, d) {
+				alert("Attenzione, il file non è stato caricato: " +d);
+			},
+			'onUploadSuccess'		: function(a, b, c) {
+				//alert("Le informazioni sono state caricate correttamente.");
+				alert(b);
+				//location.href = location.href;
+			}
+		});
+	}*/
 	$('#invia').click(function() {
 		var errore="";
 		nome_band=encodeURIComponent($.trim($('#nome_band').val()));
@@ -43,6 +66,12 @@ jQuery(document).ready(function() {
 			return false;
 	  } else {
 			return true;
+			/*if({DISABLE} == true){
+				//posto tramite ajax
+			}else{
+				$("#canzone").uploadify("settings", "formData", { 'nome_band' : nome_band, 'biografia' : biografia, 'messaggio' : messaggio, 'titolo_canzone' : titolo_canzone });
+				$('#canzone').uploadify('upload','*');
+			}*/
 		}
   });
 	//////// FINE GESTIONE UPLOAD ////////////
@@ -51,8 +80,7 @@ jQuery(document).ready(function() {
 //// inserire gif ajax per caricamento
 //]]>
 </script>
-<div id="alert">{ALERT}</div>
-<form name="bio_upload" action ="/continentenuovo/exe/registration.exe.php" method="post" enctype="multipart/form-data"> 
+<form name="bio_upload" action ="/continentenuovo/exe/registration.exe.php">
 <input type="hidden" id = "id_user" name="id_user" value="{ID_USER}">
 <ul>
 	<li><span class="label"><label for="nome_band">Nome del gruppo*</label></span><input type="text" name="nome_band" id="nome_band" value="{NOME_GRUPO}"/></li>

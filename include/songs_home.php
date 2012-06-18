@@ -3,7 +3,7 @@
 $sql = "select DISTINCT id_user, song, title from songs join users on songs.id_user = users.id_phpbb where 1 order by songs.upload_time limit 5";
 $result = $gestdb -> value($sql,$db_sito);
 
-$song_root_path = "/continentenuovo/files/";
+$song_root_path = "/continentenuovo/files/songs/";
 $swf_path = "/continentenuovo/js/jplayer/";
 
 $tpl->loadTemplatefile("player.tpl.htm", true, true);

@@ -1,7 +1,7 @@
 <?
 /******* VARIABILI DI CONTROLLO *************/
 define('BAND_REGISTRATION',true);
-define('VOTE_SESSION',true);
+define('VOTE_SESSION',false);
 
 /*******************************************/
 /*Variabilie per l'header*/
