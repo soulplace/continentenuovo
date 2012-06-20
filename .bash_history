@@ -283,3 +283,9 @@ git pull
 git add .
 git commit -a
 git push
+cd
+git pull
+git add .
+git commit -a
+git push
+su

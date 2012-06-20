@@ -20,6 +20,7 @@ if($_FILES["immagine"]["size"]>0){
 	}
 }
 $sqlselectbio = "select id from bio where id_user = ".$_REQUEST['id_user']." limit 1";
+echo $sqlselectbio;
 $selectbio = $gestdb -> value($sqlselectbio,$db_sito);
 if($selectbio[0]["id"]>""){
 	$sqlupdatebio = "update bio set 
