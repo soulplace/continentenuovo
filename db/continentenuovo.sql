@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generato il: 23 mag, 2012 at 03:27 PM
--- Versione MySQL: 5.1.49
--- Versione PHP: 5.3.3-7+squeeze8
+-- Generato il: 20 giu, 2012 at 02:29 PM
+-- Versione MySQL: 5.1.61
+-- Versione PHP: 5.3.3-7+squeeze9
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `bio` (
   `image` varchar(255) DEFAULT NULL,
   `upload_timestamp` timestamp NULL DEFAULT NULL COMMENT 'atttenzione: inserire solo il time di upload,non di modifica',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT=' l''email e il nome vengono presi dal db del forum' AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT=' l''email e il nome vengono presi dal db del forum' AUTO_INCREMENT=11 ;
 
 --
 -- Dump dei dati per la tabella `bio`
@@ -43,10 +43,11 @@ CREATE TABLE IF NOT EXISTS `bio` (
 
 INSERT INTO `bio` (`id`, `id_user`, `nome_band`, `bio`, `message`, `video`, `image`, `upload_timestamp`) VALUES
 (1, 1, 'Band test', 'bio test', 'message test', 'http://vimeo.com/38514156', '', '2012-05-23 14:46:14'),
-(2, 2, 'band test 2', 'bio test 2', 'message test2', NULL, NULL, '2012-05-23 14:49:39'),
+(2, 2, 'band test 2', '&lt;p&gt;\r\n	bio test 2 modificata&lt;/p&gt;\r\n', '&lt;p&gt;\r\n	message test2&lt;/p&gt;\r\n', '   http://www.youtube.com/watch?v=VznlDlNPw4Q&feature=g-vrec', NULL, '2012-05-23 14:49:39'),
 (3, 3, 'band test 3', 'bio test 3', 'message test 3', NULL, NULL, '2012-05-23 14:49:39'),
 (8, 4, 'test 4', 'bio 4', 'message tes 4', NULL, NULL, '2012-05-23 14:49:02'),
-(9, 5, 'band 5', 'bio 5 test', 'test message 5', NULL, NULL, '2012-05-23 14:49:02');
+(9, 5, 'band 5', 'bio 5 test', 'test message 5', NULL, NULL, '2012-05-23 14:49:02'),
+(10, 53, 'band test da registrazione', '&lt;p&gt;\r\n	siamo troppo fighi 1111!!!11onenee&lt;/p&gt;\r\n', '&lt;p&gt;\r\n	buu la pirateria buuu!!&lt;/p&gt;\r\n', '', '53.jpg', NULL);
 
 -- --------------------------------------------------------
 
@@ -105,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `songs` (
   `upload_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `editable` varchar(1) NOT NULL DEFAULT 'y',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dump dei dati per la tabella `songs`
@@ -114,9 +115,11 @@ CREATE TABLE IF NOT EXISTS `songs` (
 INSERT INTO `songs` (`id`, `id_user`, `song`, `title`, `upload_time`, `editable`) VALUES
 (1, 1, 'someday.mp3', 'canzone test', '2012-04-18 17:28:32', 'y'),
 (0, 3, 'someday.mp3', 'canzone test 3', '2012-04-18 17:28:32', 'y'),
-(3, 2, 'someday.mp3', 'canzone test 2', '2012-04-18 17:28:32', 'y'),
+(7, 2, '2.mp3', 'canzone test 2', '2012-06-18 16:04:51', 'Y'),
 (4, 4, 'someday.mp3', 'canzone test 4', '2012-04-18 17:28:32', 'y'),
-(5, 5, 'someday.mp3', 'canzone test 5', '2012-04-18 17:28:32', 'y');
+(5, 5, 'someday.mp3', 'canzone test 5', '2012-04-18 17:28:32', 'y'),
+(6, 2, '2.mp3', 'canzone test 2', '2012-06-18 15:14:36', 'Y'),
+(8, 53, '53.mp3', 'bella proprio cioè', '2012-06-20 14:23:55', 'Y');
 
 -- --------------------------------------------------------
 
@@ -136,10 +139,11 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id_phpbb`, `role`) VALUES
 (1, 0),
-(2, 2),
+(2, 0),
 (3, 2),
 (4, 2),
-(5, 2);
+(5, 2),
+(53, 2);
 
 -- --------------------------------------------------------
 
