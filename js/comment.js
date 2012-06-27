@@ -35,6 +35,7 @@ $(function() {
 					$("#name").focus();
 
 					$("#flash").hide();
+					location.href=location.href;
 
 				}
 			});
