@@ -289,3 +289,12 @@ git add .
 git commit -a
 git push
 su
+cd
+git pull
+git add .
+git commit -a
+git push
+git add .
+git commit -a
+git push
+su

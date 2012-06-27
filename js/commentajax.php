@@ -1,14 +1,20 @@
 <?php
+include($_SERVER['DOCUMENT_ROOT'].'/continentenuovo/include/basic.php');
+
 if($_POST)
 {
-$name=$_POST['name'];
-$email=$_POST['email'];
-$comment=$_POST['comment'];
-
-$lowercase = strtolower($email);
-  $image = md5( $lowercase );
-  
-//mysql_query("SQL insert statement");
+	$user_id=$_POST['user_id'];
+	$comment=$_POST['comment'];
+	$image = $_POST['image'];
+	$id_commented = $_POST['id_commented'];
+	$sqlinsertcommento = "insert into comments (id_user,id_commented,message,ip,approved) values (
+		'".$user_id."',
+		'".$id_commented."',
+		'".$comment."',
+		'".$_SERVER['REMOTE_ADDR']."',
+		'y'
+		)";
+	$insertcommento = $gestdb -> query($sqlinsertcommento,$db_sito);
 
 }
 
@@ -16,7 +22,7 @@ else { }
 
 ?>
 <li class="box">
-<img src="http://www.gravatar.com/avatar.php?gravatar_id=<?php echo $image; ?>" style="float:left; width:80px; height:80px; margin-right:20px"/><span style="font-size:16px; color:#663399; font-weight:bold"> <?php echo $name;?></span> <br /><br />
+	<img src="/phpbb/download/file.php?avatar=<?php echo $image ?>" /><span> <?php echo $name;?></span> <br /><br />
 
 <?php echo $comment; ?>
 </li>

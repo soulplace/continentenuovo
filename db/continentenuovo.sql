@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generato il: 20 giu, 2012 at 02:29 PM
+-- Generato il: 27 giu, 2012 at 10:45 AM
 -- Versione MySQL: 5.1.61
 -- Versione PHP: 5.3.3-7+squeeze9
 
@@ -58,17 +58,29 @@ INSERT INTO `bio` (`id`, `id_user`, `nome_band`, `bio`, `message`, `video`, `ima
 CREATE TABLE IF NOT EXISTS `comments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_user` mediumint(8) NOT NULL,
+  `id_commented` mediumint(8) DEFAULT NULL,
   `message` text NOT NULL,
   `ip` varchar(16) NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `approved` varchar(1) NOT NULL DEFAULT 'y',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dump dei dati per la tabella `comments`
 --
 
+INSERT INTO `comments` (`id`, `id_user`, `id_commented`, `message`, `ip`, `time`, `approved`) VALUES
+(1, 2, 1, 'ASFSDG', '192.168.0.32', '2012-06-27 09:05:15', 'y'),
+(2, 2, 1, 'grwdfasd', '192.168.0.32', '2012-06-27 09:14:48', 'y'),
+(3, 2, 1, 'miaoajsdpaklf\n', '192.168.0.32', '2012-06-27 09:25:42', 'n'),
+(4, 2, 1, 'fasa', '192.168.0.32', '2012-06-27 09:56:43', 'n'),
+(5, 2, 1, 'asfafas', '192.168.0.32', '2012-06-27 10:05:15', 'y'),
+(6, 2, 1, 'wdasf', '192.168.0.32', '2012-06-27 10:06:52', 'n'),
+(7, 2, 1, 'test', '192.168.0.32', '2012-06-27 10:06:59', 'y'),
+(8, 2, 1, 'adf', '192.168.0.32', '2012-06-27 10:07:57', 'y'),
+(9, 2, 1, 'prova aggiunta', '192.168.0.32', '2012-06-27 10:14:05', 'y'),
+(10, 2, 1, 'test senza ol', '192.168.0.32', '2012-06-27 10:17:40', 'y');
 
 -- --------------------------------------------------------
 

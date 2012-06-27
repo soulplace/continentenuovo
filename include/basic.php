@@ -79,6 +79,7 @@ function eddairegistrati(){
 # $dbpass = pwd db
 $dbhost = "localhost";
 $dbname = "continentenuovo";
+$dbnamephpbb = "phpbb3";
 $dbuser = "continentenuovo";
 $dbpass = "bnqtj8uEMdbX3Snv";
 include($root_path . "include/class.gestdb.php");

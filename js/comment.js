@@ -3,11 +3,16 @@ $(function() {
 	$(".submit").click(function() {
 
 		var name = $("#name").val();
-		var email = $("#email").val();
+		var user_id = $("#user_id").val();
 		var comment = $("#comment").val();
-		var dataString = 'name='+ name + '&email=' + email + '&comment=' + comment;
+		var image = $("#image").val();
+		var id_commented = $("#id_commented").val();
+		
+		
+		
+		var dataString = 'name='+ name + '&user_id=' + user_id + '&comment=' + comment + '&image=' + image + '&id_commented=' + id_commented;
 
-		if(name=='' || email=='' || comment=='')
+		if(name=='' || user_id=='' || comment=='')
 		{
 			alert('Please Give Valide Details');
 		}
@@ -24,8 +29,8 @@ $(function() {
 
 					$("ol#update").append(html);
 					$("ol#update li:last").fadeIn("slow");
-					document.getElementById('email').value='';
-					document.getElementById('name').value='';
+					//document.getElementById('user_id').value='';
+					//document.getElementById('name').value='';
 					document.getElementById('comment').value='';
 					$("#name").focus();
 
