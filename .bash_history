@@ -304,3 +304,8 @@ git add .
 git commit -a
 git push
 exit
+cd
+git add .
+git commit -a
+git push
+exit
