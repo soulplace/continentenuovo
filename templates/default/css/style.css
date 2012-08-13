@@ -24,11 +24,11 @@ ol.timeline
 {list-style:none;font-size:1.2em;}
 ol.timeline li{ display:none;position:relative;padding:.7em 0 .6em 0;}ol.timeline li:first-child{}
 
-#main
+/*#main
 {
 width:500px; margin-top:20px; margin-left:100px;
 font-family:"Trebuchet MS";
-}
+}*/
 #flash
 {
 margin-left:100px;
@@ -44,10 +44,8 @@ input
 {
 color:#000000;
 font-size:14px;
-border:#666666 solid 2px;
-height:24px;
 margin-bottom:10px;
-width:200px;
+/*width:200px;*/
 
 
 }
@@ -77,4 +75,18 @@ padding-left:5px;
 }
 .box span{
 	font-size:16px; color:#663399; font-weight:bold
+}
+#sidebar{
+	width:243px;
+	padding-right:10px;
+	float:left;
+}
+#page{
+	width:730px;
+	float:left;
+	background: url(images/box-bottom-bg.jpg) left bottom no-repeat #fff;
+	min-height:600px;
+}
+#songs_home{
+	width:422px;
 }

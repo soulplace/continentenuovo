@@ -315,3 +315,12 @@ git add .
 git commit -a
 git push
 exit
+cd
+pwd
+git pull
+git add .
+git commit -a
+git add .
+git commit -a
+git push
+exit

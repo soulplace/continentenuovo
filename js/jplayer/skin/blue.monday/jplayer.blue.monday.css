@@ -124,6 +124,8 @@ div.jp-video ul.jp-controls,
 div.jp-interface ul.jp-controls li {
 	display:inline;
 	float: left;
+	background:none !important;
+	padding-left:0px !important;
 }
 
 div.jp-interface ul.jp-controls a {
@@ -263,7 +265,8 @@ div.jp-video a.jp-mute,
 div.jp-video a.jp-unmute {
 	left: 50px;
 }
-
+
+
 div.jp-video a.jp-volume-max {
 	left: 134px;
 }
@@ -281,7 +284,8 @@ a.jp-unmute {
 a.jp-unmute:hover {
 	background: url("jplayer.blue.monday.jpg") -79px -170px no-repeat;
 }
-a.jp-volume-max {
+
+a.jp-volume-max {
 	background: url("jplayer.blue.monday.jpg") 0 -186px no-repeat;
 }
 a.jp-volume-max:hover {
@@ -385,6 +389,7 @@ div.jp-title li {
 div.jp-playlist li {
 	padding:5px 0 4px 20px;
 	border-bottom:1px solid #eee;
+	background:none !important;
 }
 
 div.jp-playlist li div {
@@ -527,6 +532,8 @@ div.jp-video ul.jp-toggles {
 ul.jp-toggles li {
 	display:block;
 	float:right;
+	background:none !important;
+	padding-left:0px !important;
 }
 
 ul.jp-toggles li a {

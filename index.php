@@ -6,6 +6,9 @@
 
 include('include/basic.php');
 include($root_path . "/include/header.php");
+?>
+<div class="top-bg-png png"></div>
+<?
 include($root_path . "/include/home.php");
 include($root_path . "include/footer.php");
 

@@ -1,0 +1,31 @@
+#main_site { width:983px; margin:0 auto; text-align:left;}
+
+#header {height:276px;}
+
+#footer { height:93px;}
+
+.col-1, .col-2, .col-3 {float:left;}
+.container {width:100%; overflow:hidden;}
+
+.col-1 {width:217px;}
+.col-2 {width:735px;}
+/* ============================= page1 ===========================*/
+#page1 .col-2 .col-1 {width:466px;}
+#page1 .col-2 .col-1 .col-1 {width:190px;}
+#page1 .col-2 .col-2 {width:240px;}
+/* ============================= page2 ===========================*/
+#page2 .col-2 .col-1 {width:230px;}
+/* ============================= page3 ===========================*/
+#page3 .col-2 .col-1 {width:466px;}
+#page3 .col-2 .col-1 .col-1 {width:190px;}
+#page3 .col-2 .col-2 {width:240px;}
+/* ============================= page4 ===========================*/
+#page4 .col-2 .col-1 {width:327px;}
+#page4 .col-2 .col-2 {width:318px;}
+/* ============================= page5 ===========================*/
+#page5 .col-2 .col-1 {width:466px;}
+#page5 .col-2 .col-2 {width:240px;}
+/* ============================= page6 ===========================*/
+#page6 .col-2 .col-1 {width:466px;}
+#page6 .col-2 .col-1 .col-1 {width:224px;}
+#page6 .col-2 .col-2 {width:240px;}
