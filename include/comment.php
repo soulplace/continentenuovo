@@ -51,7 +51,7 @@ foreach($selectcommenti as $key=> $value){
 	$sqlselectusername = "select username,user_avatar from phpbb_users where user_id = '".$value['id_user']."' limit 1";
 	$selectusername = $gestdbphpbb -> value($sqlselectusername,$db_phpbb);
 	?>
-	<li class="box"> 
+	<li class="box-comment"> 
 		<p class="header_comment">
 		<img src="/phpbb/download/file.php?avatar=<?php echo $selectusername[0]['user_avatar'] ?>" /><span> <?php echo $selectusername[0]['username'];?></span> <small><? echo $value['time'];?></small><? if($value['id_user'] == $user->data['user_id']){?> <span class="erase"><a href="?id=<?echo $id_utente?>&amp;erase=erase&amp;id_comm=<?echo $value['id']?>">Elimina</a></span><?}?></p>
 

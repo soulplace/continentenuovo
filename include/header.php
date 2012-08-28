@@ -22,7 +22,8 @@ if ($user->data['user_id'] == ANONYMOUS) {
 
 /******************************************/
 ?>
+<?include_once($root_path . "include/menu.php");?>
+
 <div id="content">
 	<div class="container">
-	<?include_once($root_path . "include/menu.php");?>
 	<?include_once($root_path . "include/sidebar.php");?>

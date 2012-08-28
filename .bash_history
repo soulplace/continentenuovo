@@ -324,3 +324,18 @@ git add .
 git commit -a
 git push
 exit
+git pull
+cd /var/www/continentenuovo/
+git pull
+git add .
+git commit -a
+git push
+su
+su
+cd
+cd /var/www/continentenuovo/
+git pull
+ping google.it
+ifconfig eth0
+sudo ifconfig eth0
+su

@@ -16,6 +16,7 @@ $phpEx = substr(strrchr(__FILE__, '.'), 1);
 
 $phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : '/usr/share/phpbb3/www/';
 include($phpbb_root_path . 'common.php');
+include($phpbb_root_path . 'includes/functions_display.' . $phpEx);
 
 
 ## URL di visibilita' sul web del forum phpBB3

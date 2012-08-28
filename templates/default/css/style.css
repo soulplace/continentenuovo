@@ -34,9 +34,9 @@ font-family:"Trebuchet MS";
 margin-left:100px;
 
 }
-.box
+.box-comment
 {
-height:85px;
+min-height:105px;
 border-bottom:#dedede dashed 1px;
 margin-bottom:20px;
 }
@@ -89,4 +89,18 @@ padding-left:5px;
 }
 #songs_home{
 	width:422px;
+}
+#page_body{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+#main{
+	color:#fff;
+}
+.box1 #main div{
+	margin-left:15px !important;
+}
+.box1 #main p{
+	margin-left:15px;
 }

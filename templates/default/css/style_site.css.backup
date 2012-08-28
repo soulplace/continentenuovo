@@ -54,14 +54,14 @@ h6 {padding-bottom:20px;}
 /* ============================= header ====================== */
 
 .menu {background:url(images/menu-bg.jpg) left top no-repeat; height:123px; position:relative;}
-.menu ul {width:100%; height:120px; overflow:hidden;}
+.menu ul {width:100%; overflow:hidden;}
 .menu li {line-height:1.2307em; font-size:1.5em; background:none; padding:0 0 0 0; float: left;}
 .menu li a {color:#fff; text-decoration:none; display:block; width:114px; text-align:center; padding:3px 0 0 0; height:33px; background:url(images/png-bg.png) repeat;}
 .menu li a:hover, .menu .active a {background:url(images/menu-li-a-hover.png) top center no-repeat;}
 
-.menu-left {float:left; padding:39px 0 0 25px; width:655px; position:relative}
+.menu-left {float:left; padding:39px 0 0 25px; width:410px; position:relative}
 .logo {top:0; left:310px; position:absolute;}
-.menu-right {float:left; width:200px; }
+.menu-right {float:right; padding:39px 20px 0 0; width:350px; position:relative;}
 
 .slogan {float:left; padding:12px 0 0 250px; width:310px}
 .slogan img {margin-left:11px;}
