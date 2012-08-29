@@ -34,12 +34,6 @@ $nrighe = count($result);
 $nrpag= 2;
 //calcolo il numero delle pagine
 $npag = ceil($nrighe/$nrpag);
-include($root_path."/include/paginazione.php");
-if($_SESSION['FX']['pag'] <= 1){
-	$start = 0;
-}else{
-	$start=($_SESSION['FX']['pag']-1)*$nrpag;
-}
 
 /*********/
 /*echo "<pre>";
@@ -47,40 +41,51 @@ print_r($result);
 echo "</pre>";
 */
 ?>
-<div id="login">
-	<?include_once($root_path . "include/login.php");?>
-	<?echo "Bentornato, ".$username;?>
-	<?include_once($root_path . "include/logout.php");?>
-</div>
-<div id="archive">
-	<div id="content_archive">
-	<?
-	if(count($result)>0){
-		$tpl->loadTemplatefile("archive.tpl.htm", true, true);
-		$i=0;
-		for($count = $start; $count<$start+$nrpag; $count++){
+<div class="col-2">
+	<div class="top-bg-png png"></div>
+	<div class="box">
+		<div class="bottom-bg">
+			<div class="indent">
+				<div class="container">
+					
+					<?
+					include($root_path."/include/paginazione.php");
+					if($_SESSION['FX']['pag'] <= 1){
+						$start = 0;
+					}else{
+						$start=($_SESSION['FX']['pag']-1)*$nrpag;
+					}
+					
+				if(count($result)>0){
+					$tpl->loadTemplatefile("archive.tpl.htm", true, true);
+					$i=0;
+					for($count = $start; $count<$start+$nrpag; $count++){
 
-			//conto i voti ricevuti dalla canzone dell'artista
-			if($result[$count]['id']>""){
-				$select = "select COUNT(*) from votes where id_voted = ".$result[$count]['id'];
-				$sql = $gestdb -> value($select,$db_sito);
-			}
-			$tpl->setVariable("ID_USER".$i, $result[$count]['id_user']) ;
-			$tpl->setVariable("NOME_BAND".$i, $result[$count]['nome_band']) ;
-			$tpl->setVariable("IMAGE".$i, $result[$count]['image']) ;
-			$tpl->setVariable("BIO".$i, $result[$count]['bio']) ;
-			$tpl->setVariable("TITOLO_CANZONE".$i, $result[$count]['title']) ;
-			if($result[$count]['id']>""){
-				$tpl->setVariable("VOTI".$i, $sql[0][0]) ;
-			}
-			$i++;
-		}
-	}else{
-		echo "nessun risultato";
-	}
-	$tpl->parse("archive");
-	$tpl->show();
-	?>
-</div>
-</div>
+						//conto i voti ricevuti dalla canzone dell'artista
+						if($result[$count]['id']>""){
+							$select = "select COUNT(*) from votes where id_voted = ".$result[$count]['id'];
+							$sql = $gestdb -> value($select,$db_sito);
+						}
+						$tpl->setVariable("ID_USER".$i, $result[$count]['id_user']) ;
+						$tpl->setVariable("NOME_BAND".$i, $result[$count]['nome_band']) ;
+						$tpl->setVariable("IMAGE".$i, $result[$count]['image']) ;
+						$tpl->setVariable("BIO".$i, $result[$count]['bio']) ;
+						$tpl->setVariable("TITOLO_CANZONE".$i, $result[$count]['title']) ;
+						if($result[$count]['id']>""){
+							$tpl->setVariable("VOTI".$i, $sql[0][0]) ;
+						}
+						$i++;
+					}
+				}else{
+					echo "nessun risultato";
+				}
+				$tpl->parse("archive");
+				$tpl->show();
+				?>
+			</div><!--/container -->
+		</div><!--/indent -->
+	</div><!--/bottom-bg -->
+</div><!--/box -->
+
+</div><!--/col-2 -->
 <? include($root_path."/include/footer.php");?>

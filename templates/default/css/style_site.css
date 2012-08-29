@@ -38,7 +38,7 @@ p {padding-top:16px;}
 
 /* ============================= main layout ====================== */
 
-li { background:url(images/marker.gif) no-repeat 0 12px; padding-left:15px; line-height:2.25em;}
+li { /*background:url(images/marker.gif) no-repeat 0 12px; padding-left:15px; line-height:2.25em;*/}
 li a {color:#483c24; font-weight:bold;}
 
 .imgindent {margin:0 20px 0 0; float:left;}

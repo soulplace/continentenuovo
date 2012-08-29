@@ -1,5 +1,5 @@
 <?php
-include_once($root_path . "include/login.php");
+//include_once($root_path . "include/login.php");
 if($loggato){
 	$image= $user->data["user_avatar"];
 	

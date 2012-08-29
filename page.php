@@ -26,6 +26,7 @@ $tpl->setVariable("MESSAGE", $result[0]['message']) ;
 $tpl->setVariable("VOTES", $sql[0][0]) ;
 $tpl->parse("page");
 $tpl->show();
+
 //Recpero la canzone dell'artista
 $sql_song = "select id_user, song, title from songs join users on songs.id_user = users.id_phpbb where songs.id_user =".$id_utente." order by songs.upload_time limit 1";
 $song = $gestdb -> value($sql_song,$db_sito);
@@ -62,6 +63,15 @@ if($result[0]['video']>""){
 		$tpl_video->parse("video");
 		$tpl_video->show();	
 	}	
+	
 ?>
+
 <? include($root_path."/include/comment.php");?>
+				</div><!--/container -->
+			</div><!--/indent -->
+		</div><!--/bottom-bg -->
+	</div><!--/box -->
+
+</div><!--/col-2 -->
 <? include($root_path."/include/footer.php");?>
+<?// phpinfo();?>

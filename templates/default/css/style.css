@@ -87,9 +87,7 @@ padding-left:5px;
 	background: url(images/box-bottom-bg.jpg) left bottom no-repeat #fff;
 	min-height:600px;
 }
-#songs_home{
-	width:422px;
-}
+
 #page_body{
     display: inline-block;
     height: 100%;
@@ -97,10 +95,4 @@ padding-left:5px;
 }
 #main{
 	color:#fff;
-}
-.box1 #main div{
-	margin-left:15px !important;
-}
-.box1 #main p{
-	margin-left:15px;
 }

@@ -339,3 +339,12 @@ ping google.it
 ifconfig eth0
 sudo ifconfig eth0
 su
+cd /var/www/continentenuovo/
+git pull
+su
+cd /var/www/continentenuovo/
+git pull
+git add .
+git commit -a
+git push
+su

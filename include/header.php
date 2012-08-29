@@ -6,7 +6,11 @@ $tpl->loadTemplatefile("header.tpl.htm", true, true);
 $tpl->setVariable("TITLE", $title) ;
 $tpl->setVariable("DESCRIPTION", $description) ;
 //include("include/basic.php");
-
+if(preg_match("/page/i",$_SERVER["PHP_SELF"])){
+	$tpl->setVariable("PLAYER_CSS","/continentenuovo/js/jplayer/skin/blue.monday_single/jplayer.blue.monday.css");
+}else{
+	$tpl->setVariable("PLAYER_CSS","/continentenuovo/js/jplayer/skin/blue.monday/jplayer.blue.monday.css");
+}
 
 $tpl->parse("header");
 $tpl->show();

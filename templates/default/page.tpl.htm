@@ -1,13 +1,32 @@
 <!-- BEGIN page -->
-<div id="artist_page">
-	<h3>{NOME_BAND}</h3>
-	<span id="votes">{VOTES}</span>
-	<div id="bio">
-		{BIO}
-		{IMAGE}
-	</div>
-	<div id="message">
-		{MESSAGE}
-	</div>
-</div>
+<div class="col-2">
+	<div class="top-bg-png png"></div>
+	<div class="box">
+		<div class="bottom-bg">
+			<div class="indent">
+				<div class="container">
+					<h3>{NOME_BAND}</h3>
+					<span id="votes">{VOTES}</span>
+					<div id="bio">
+						{BIO}
+						{IMAGE}
+					</div>
+					<div id="message">
+						{MESSAGE}
+					</div>
+
 <!-- END page -->
+<style>
+   #jquery_jplayer_2 {
+      display:none; /* Disables jPlayer when using Flash */
+   }
+   #jp_container_2{
+	   display:none; /* Disables jPlayer when using Flash */
+  
+	}
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+  $("#jquery_jplayer_2").hide(); /* Disables jPlayer when using Flash */
+});
+</script>
