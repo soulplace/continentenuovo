@@ -11,7 +11,7 @@ $description ="progetto musicale Continente Nuovo";
 require_once "IT.php";
 #su debian e UBUNTU restano cosi'
 define('IN_PHPBB', true);
-define('PHPBB_ROOT_PATH', '/usr/share/phpbb3/www/');
+define('PHPBB_ROOT_PATH', '/home/samu2012/downloaddeimieisogni.it/forum/');
 $phpEx = substr(strrchr(__FILE__, '.'), 1);
 
 $phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : '/usr/share/phpbb3/www/';
@@ -25,7 +25,8 @@ $phpbb_url = "/phpbb/";
 
 ## directory di base dell'applicazione
 ## forse si puo' togliere
-$root_path = '/var/www/continentenuovo/';
+$root_path = '/home/samu2012/downloaddeimieisogni.it/';
+
 
 $web_url = "/continentenuovo/";
 #link al form di registrazioni phpbb
@@ -78,11 +79,18 @@ function eddairegistrati(){
 # $dbname = nome db
 # $dbuser = utente db
 # $dbpass = pwd db
-$dbhost = "localhost";
-$dbname = "continentenuovo";
-$dbnamephpbb = "phpbb3";
-$dbuser = "continentenuovo";
-$dbpass = "bnqtj8uEMdbX3Snv";
+#$dbhost = "localhost";
+#$dbname = "continentenuovo";
+#$dbnamephpbb = "phpbb3";
+#$dbuser = "continentenuovo";
+#$dbpass = "bnqtj8uEMdbX3Snv";
+
+$dbhost = "sql.downloaddeimieisogni.it";
+$dbname = "downloaddeimieisogniit";
+$dbnamephpbb = "downloaddeimieisogniit";
+$dbuser = "downuser";
+$dbpass = "Z9mAC#b";
+
 include($root_path . "include/class.gestdb.php");
 $gestdb = new gestdb();
 

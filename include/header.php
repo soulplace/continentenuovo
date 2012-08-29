@@ -1,6 +1,6 @@
 <?php
 //possiamo separare questo file per rendere diversi title e description a seconda del tipo di pagina e dell'artista
-require_once "HTML/Template/IT.php";
+require_once "IT.php";
 $tpl = new HTML_Template_IT("./templates/default/");
 $tpl->loadTemplatefile("header.tpl.htm", true, true);
 $tpl->setVariable("TITLE", $title) ;
