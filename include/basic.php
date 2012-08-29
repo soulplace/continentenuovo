@@ -8,7 +8,7 @@ define('VOTE_SESSION',false);
 $title = "Il download dei miei sogni";
 $description ="progetto musicale Continente Nuovo";
 
-require_once "HTML/Template/IT.php";
+require_once "IT.php";
 #su debian e UBUNTU restano cosi'
 define('IN_PHPBB', true);
 define('PHPBB_ROOT_PATH', '/usr/share/phpbb3/www/');
