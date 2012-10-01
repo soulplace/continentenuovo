@@ -48,14 +48,25 @@ foreach($selectcommenti as $key=> $value){
 	$db_phpbb = $gestdb -> conn_db( $dbhost , $dbuser , $dbpass );
 	$gestdbphpbb -> use_db( $dbnamephpbb , $db_phpbb );
 	
-	$sqlselectusername = "select username,user_avatar from phpbb_users where user_id = '".$value['id_user']."' limit 1";
+	$sqlselectusername = "select * from phpbb_users where user_id = '".$value['id_user']."' limit 1";
 	$selectusername = $gestdbphpbb -> value($sqlselectusername,$db_phpbb);
+	/*echo "<pre>";
+	print_r($selectusername);
+	echo "</pre>";*/
+	echo "useravatar".urlencode($selectusername[0]['user_avatar']);
+	if($selectusername[0]['user_avatar']>""){
+		$user_image = "/forum/download/file.php?avatar=".$selectusername[0]['user_avatar'];
+	}else{
+		$user_image = "/forum/styles/DirtyBoard2.0/theme/images/no_avatar.gif";
+	}
 	?>
 	<li class="box-comment"> 
-		<p class="header_comment">
-		<img src="/phpbb/download/file.php?avatar=<?php echo $selectusername[0]['user_avatar'] ?>" /><span> <?php echo $selectusername[0]['username'];?></span> <small><? echo $value['time'];?></small><? if($value['id_user'] == $user->data['user_id']){?> <span class="erase"><a href="?id=<?echo $id_utente?>&amp;erase=erase&amp;id_comm=<?echo $value['id']?>">Elimina</a></span><?}?></p>
-
+		<p class="header_comment" >
+		<img src="<?php echo $user_image ?>" /><span> <?php echo $selectusername[0]['username'];?></span> <small><? echo $value['time'];?></small><? if($value['id_user'] == $user->data['user_id']){?> <span class="erase" ><a href="?id=<?echo $id_utente?>&amp;erase=erase&amp;id_comm=<?echo $value['id']?>">Elimina</a></span><?}?></p>
+		<p class="comment_body">
+		
 	<?php echo $value['message']; ?>
+	</p>
 	</li>
 	
 <?}

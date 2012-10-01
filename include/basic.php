@@ -1,11 +1,13 @@
 <?
+error_reporting(0);
+
 /******* VARIABILI DI CONTROLLO *************/
 define('BAND_REGISTRATION',true);
 define('VOTE_SESSION',false);
 
 /*******************************************/
 /*Variabilie per l'header*/
-$title = "Il download dei miei sogni";
+$title = "Download Dei Miei Sogni";
 $description ="progetto musicale Continente Nuovo";
 
 require_once "IT.php";
@@ -17,11 +19,17 @@ $phpEx = substr(strrchr(__FILE__, '.'), 1);
 $phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : '/usr/share/phpbb3/www/';
 include($phpbb_root_path . 'common.php');
 include($phpbb_root_path . 'includes/functions_display.' . $phpEx);
+// Start session management
+$user->session_begin();
+$auth->acl($user->data);
+// Grab user preferences
+$user->setup();
 
 
 ## URL di visibilita' sul web del forum phpBB3
 ## forse si puo' togliere
-$phpbb_url = "/phpbb/";
+## ho cambiato l'url (fabio)
+$phpbb_url = "/forum/";
 
 ## directory di base dell'applicazione
 ## forse si puo' togliere
@@ -50,6 +58,7 @@ function miologin($root_path, $redir , $phpbb_url){
         $tpl->parse("login");
         $xxx = $tpl->get();
         return $xxx;
+
 }
 
 #parametri di input:
@@ -99,4 +108,3 @@ $gestdb = new gestdb();
 $db_sito = $gestdb -> conn_db( $dbhost , $dbuser , $dbpass );
 $gestdb -> use_db( $dbname , $db_sito );
 ?>
-

@@ -5,8 +5,11 @@
 <?
 ///html_entity_decode() per bio e message
 include('include/basic.php');
-$title = "nome artista | ".$title;
-$description = "descrizione artista"; 
+$id_utente = strip_tags($_REQUEST['id']);
+$sqlselect = "select message,bio.id_user,songs.id_user,songs.id,title,upload_time,bio.nome_band,bio,image,video from songs left join bio on bio.id_user = songs.id_user where bio.id_user = ".$id_utente." limit 1";
+$result = $gestdb -> value($sqlselect,$db_sito);
+$title = $result[0]['nome_band']." | ".$title;
+$description = substr($result[0]['bio'],0,40); 
 ?>
 <? include($root_path."/include/header.php");?>
 <?
@@ -30,8 +33,8 @@ $tpl->show();
 //Recpero la canzone dell'artista
 $sql_song = "select id_user, song, title from songs join users on songs.id_user = users.id_phpbb where songs.id_user =".$id_utente." order by songs.upload_time limit 1";
 $song = $gestdb -> value($sql_song,$db_sito);
-$song_root_path = "/continentenuovo/files/songs/";
-$swf_path = "/continentenuovo/js/jplayer/";
+$song_root_path = "/files/songs/";
+$swf_path = "/js/jplayer/";
 $tpl_audio = new HTML_Template_IT($root_path . "/templates/default/");
 
 $tpl_audio->loadTemplatefile("player_single.tpl.htm", true, true);

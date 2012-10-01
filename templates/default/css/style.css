@@ -74,7 +74,7 @@ padding-left:5px;
 	float:left; width:80px; height:80px; margin-right:20px
 }
 .box span{
-	font-size:16px; color:#663399; font-weight:bold
+	/*font-size:16px;*/ color:#555555; /*font-weight:bold*/
 }
 #sidebar{
 	width:243px;
@@ -95,4 +95,22 @@ padding-left:5px;
 }
 #main{
 	color:#fff;
+}
+
+.header_comment{
+	color:#222222;
+}
+.erase{
+	float:right;
+}
+.erase a{
+	color:#D02B55;
+}
+.comment_body{
+	color:#222222;
+	
+}
+#comment_cont{
+	margin-left:50px;
+	margin-top:20px;
 }

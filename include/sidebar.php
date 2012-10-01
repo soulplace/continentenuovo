@@ -4,7 +4,7 @@
 		<?include_once($root_path . "include/login.php");?>
 		<?if($loggato){  echo "<h3>Bentornato, ".$username."</h3>";?>
 		<p>
-		<a href="<?echo $phpbb_url?>ucp.php" title="Pannello di controllo utente">Pannello di controllo utente</a>
+		<a href="<?echo $phpbb_url?>ucp.php" title="Pannello di controllo utente" style="color:#ffffff">Pannello di controllo utente</a>
 		</p>
 		<?}?>
 		<?include_once($root_path . "include/logout.php");?>

@@ -1,5 +1,5 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'].'/continentenuovo/include/basic.php');
+include($_SERVER['DOCUMENT_ROOT'].'/include/basic.php');
 
 if($_POST)
 {
@@ -22,7 +22,7 @@ else { }
 
 ?>
 <li class="box">
-	<img src="/phpbb/download/file.php?avatar=<?php echo $image ?>" /><span> <?php echo $name;?></span> <br /><br />
+	<img src="/forum/download/file.php?avatar=<?php echo $image ?>" /><span> <?php echo $name;?></span> <br /><br />
 
 <?php echo $comment; ?>
 </li>

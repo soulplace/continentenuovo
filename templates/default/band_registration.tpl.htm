@@ -38,11 +38,20 @@ jQuery(document).ready(function() {
 		if(messaggio=="") errore += "Messaggio obbligatorio!\n";
 		if(titolo_canzone=="") errore += "Titolo della canzone obbligatorio!\n";
 		if (errore != "") {
+
 			 alert("Non posso procedere, i seguenti errori sono stati rilevati:\n"+errore);
 			 errore = "";
 			return false;
 	  } else {
+			Shadowbox.open({
+			        content:    '<div style="background-color:#fff;font-family:arial;text-align:center;margin-top:100px"><span style="color:#333">Un attimo di pazienza, stiamo caricando i tuoi dati...</span><br /><img src="http://www.downloaddeimieisogni.it/templates/default/css/images/ajax-loader.gif" title="loading"  /><br /><span style="color:#ff0000">Non chiudere questa finestra!</span><br/> <span>si chiuder&agrave; automaticamente al termine del caricamento</span> </div>',
+			        player:     "html",
+			        title:      "Caricamento...",
+			        height:     350,
+			        width:      350
+			    });
 			return true;
+			
 		}
   });
 	//////// FINE GESTIONE UPLOAD ////////////
@@ -51,21 +60,38 @@ jQuery(document).ready(function() {
 //// inserire gif ajax per caricamento
 //]]>
 </script>
-<div id="alert">{ALERT}</div>
-<form name="bio_upload" action ="/continentenuovo/exe/registration.exe.php" method="post" enctype="multipart/form-data"> 
-<input type="hidden" id = "id_user" name="id_user" value="{ID_USER}">
-<ul>
-	<li><span class="label"><label for="nome_band">Nome del gruppo*</label></span><input type="text" name="nome_band" id="nome_band" value="{NOME_GRUPO}"/></li>
-	<li><span class="label"><label for="immagine">Immagine della band </label></span><input type="file" name="immagine" id="immagine" size ="66" /></li>
-	
-	<li><span class="label"><label for="biografia">Biografia*</label></span><textarea name="biografia" id="biografia" class="biografia" >{BIOGRAFIA}</textarea></li>
-	<li><span class="label"><label for="messaggio">Messagio anti pirateria*</label></span><textarea name="messaggio" id="messaggio" class="messaggio" >{MESSAGGIO}</textarea></li>
-	<li class="avviso">{AVVISO}</li>
-	<li class="canzone"><span class="label"><label for="canzone">Canzone per il concorso* </label></span><input type="file" name="canzone" id="canzone" size ="66" /></li>
-	<li><span class="label"><label for="titolo_canzone">Titolo canzone*</label></span><input type="text" name="titolo_canzone" id="titolo_canzone" value="{TITOLO_CANZONE}"/></li>
-	<li><span class="label"><label for="video_url">Video URL (opzionale)</label></span><input type="text" name="video_url" id="video_url" value="{VIDEO}" /></li>
-</ul>	
-	<li><input type="submit" name="invia" id="invia" value="Invia i dati!" /></li>
-</ul>
-</form>
-<!-- END registration -->
+<div class="col-2">
+	<div class="top-bg-png png"></div>
+	<div class="box">
+		<div class="bottom-bg">
+			<div class="indent">
+				<div class="container">
+
+					<div class="col-1 col-pad">
+						<div id="alert">{ALERT}</div>
+						<form name="bio_upload" action ="/exe/registration.exe.php" method="post" enctype="multipart/form-data"> 
+							<input type="hidden" id = "id_user" name="id_user" value="{ID_USER}">
+							<ul>
+								<li><span class="label"><label for="nome_band">Nome del gruppo*</label></span><input type="text" name="nome_band" id="nome_band" value="{NOME_GRUPO}"/></li>
+								<li><span class="label"><label for="immagine">Immagine della band </label></span><input type="file" name="immagine" id="immagine" size ="66" /></li>
+
+								<li><span class="label"><label for="biografia">Biografia*</label></span><textarea name="biografia" id="biografia" class="biografia" >{BIOGRAFIA}</textarea></li>
+								<li><span class="label"><label for="messaggio">Messagio anti pirateria*</label></span><textarea name="messaggio" id="messaggio" class="messaggio" >{MESSAGGIO}</textarea></li>
+								<li class="avviso">{AVVISO}</li>
+								<li class="canzone"><span class="label"><label for="canzone">Canzone per il concorso* </label></span><input type="file" name="canzone" id="canzone" size ="66" /></li>
+								<li><span class="label"><label for="titolo_canzone">Titolo canzone*</label></span><input type="text" name="titolo_canzone" id="titolo_canzone" value="{TITOLO_CANZONE}"/></li>
+								<li><span class="label"><label for="video_url">Video URL (opzionale)</label></span><input type="text" name="video_url" id="video_url" value="{VIDEO}" /></li>
+							</ul>	
+							<li><input type="submit" name="invia" id="invia" value="Invia i dati!" /></li>
+						</ul>
+					</form>
+					<!-- END registration -->
+				</div> <!-- /col-1 col-pad-->
+				<div class="col-2">
+				</div><!-- /col-2 -->
+
+			</div><!-- /container-->
+		</div><!-- /indent-->
+	</div><!-- /bottom-bg-->
+</div><!-- /box-->
+</div><!-- col-2-->

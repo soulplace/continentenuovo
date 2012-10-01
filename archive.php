@@ -12,7 +12,7 @@ SIA I RISULTATI DEL MOTORE DI RICERCA
 	<?
 //session_start();
 include('include/basic.php');
-$title = "Tutti gli artisti";
+$title = "Tutti gli artisti | ".$title;
 $description = "tutti gli artisti e le band che partecipano al concorso Il download dei miei sogni."; 
 ?>
 	<? include($root_path."/include/header.php");?>

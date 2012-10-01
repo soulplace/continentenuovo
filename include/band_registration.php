@@ -1,5 +1,5 @@
 <?
-include_once($root_path . "include/login.php");
+//include_once($root_path . "include/login.php");
 /*echo "<pre>";
 print_r($user->data);
 echo "</pre>";*/
