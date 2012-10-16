@@ -83,6 +83,7 @@ function eddairegistrati(){
 
 }
 
+
 //classe per la gestione del DB
 # $dbhost = host  database
 # $dbname = nome db

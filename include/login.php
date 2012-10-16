@@ -7,6 +7,6 @@ if($loggato){
 	$role =	$selectrole[0]['role'];
 }else{
 	$kk = miologin($root_path,$_SERVER["REQUEST_URI"], $phpbb_url);
-  print $kk;
+	print $kk;
 }
 ?>
