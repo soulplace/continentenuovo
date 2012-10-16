@@ -88,17 +88,17 @@ function eddairegistrati(){
 # $dbname = nome db
 # $dbuser = utente db
 # $dbpass = pwd db
-#$dbhost = "localhost";
-#$dbname = "continentenuovo";
-#$dbnamephpbb = "phpbb3";
-#$dbuser = "continentenuovo";
-#$dbpass = "bnqtj8uEMdbX3Snv";
+$dbhost = "localhost";
+$dbname = "continentenuovo";
+$dbnamephpbb = "phpbb3";
+$dbuser = "continentenuovo";
+$dbpass = "bnqtj8uEMdbX3Snv";
 
-$dbhost = "sql.downloaddeimieisogni.it";
-$dbname = "downloaddeimieisogniit";
-$dbnamephpbb = "downloaddeimieisogniit";
-$dbuser = "downuser";
-$dbpass = "Z9mAC#b";
+#$dbhost = "sql.downloaddeimieisogni.it";
+#$dbname = "downloaddeimieisogniit";
+#$dbnamephpbb = "downloaddeimieisogniit";
+#$dbuser = "downuser";
+#$dbpass = "Z9mAC#b";
 
 include($root_path . "include/class.gestdb.php");
 $gestdb = new gestdb();
