@@ -1,6 +1,5 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
 <script type="text/javascript">
-//Image Hover Pink Heart to White Heart
 $(document).ready(function()
 		{
 		$("span.on_img").mouseover(function ()
@@ -19,7 +18,7 @@ $(function() {
 		$(".love").click(function() 
 			{
 			var id = $(this).attr("id");
-			var user = $(this).attr("");
+			var user = $(this).attr("user");
 			var dataString = 'id='+ id + '&user=' + user;
 			var parent = $(this);
 			$(this).fadeOut(300);

@@ -11,8 +11,12 @@ $result = $gestdb -> value($sqlselect,$db_sito);
 $title = $result[0]['nome_band']." | ".$title;
 $description = substr($result[0]['bio'],0,40); 
 ?>
-<? include($root_path."/include/header.php");?>
+<? 
+	include($root_path."/include/header.php");
+?>
+	<link rel="stylesheet" type="text/css" href="/templates/default/css/vote.css" />
 <?
+	//include($root_path."/js/votes.js");
 //bio artista
 $id_utente = strip_tags($_REQUEST['id']);
 $sqlselect = "select message,bio.id_user,songs.id_user,songs.id,title,upload_time,bio.nome_band,bio,image,video from songs left join bio on bio.id_user = songs.id_user where bio.id_user = ".$id_utente." limit 1";
@@ -21,10 +25,12 @@ $select = "select COUNT(*) from votes where id_voted = ".$id_utente;
 $sql = $gestdb -> value($select,$db_sito);
 $tpl = new HTML_Template_IT($root_path . "/templates/default/");
 $tpl->loadTemplatefile("page.tpl.htm", true, true);
+
+$tpl->setVariable("IDUSER", "ciccio");
+$tpl->setVariable("IDBAND", $id_utente);
 $tpl->setVariable("NOME_BAND", $result[0]['nome_band']) ;
 $tpl->setVariable("BIO", $result[0]['bio']) ;
 $tpl->setVariable("IMAGE", $result[0]['image']) ;
-//se non c'è l'img mostrare segnaposto
 $tpl->setVariable("MESSAGE", $result[0]['message']) ;
 $tpl->setVariable("VOTES", $sql[0][0]) ;
 $tpl->parse("page");

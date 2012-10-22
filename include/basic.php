@@ -1,5 +1,7 @@
 <?
-error_reporting(0);
+//error reporting, da commentare in produzione
+error_reporting(E_ALL | E_STRICT);
+ini_set('display_errors','On');
 
 /******* VARIABILI DI CONTROLLO *************/
 define('BAND_REGISTRATION',true);
@@ -34,9 +36,8 @@ $phpbb_url = "/forum/";
 ## directory di base dell'applicazione
 ## forse si puo' togliere
 $root_path = '/home/samu2012/downloaddeimieisogni.it/';
-
-
 $web_url = "/continentenuovo/";
+
 #link al form di registrazioni phpbb
 ###
 ### FUNZIONI
@@ -79,27 +80,17 @@ function miologout($root_path, $redir, $firstpage){
 }
 
 
-function eddairegistrati(){
-
-}
-
-
 //classe per la gestione del DB
 # $dbhost = host  database
 # $dbname = nome db
 # $dbuser = utente db
 # $dbpass = pwd db
 $dbhost = "localhost";
-$dbname = "continentenuovo";
-$dbnamephpbb = "phpbb3";
-$dbuser = "continentenuovo";
-$dbpass = "bnqtj8uEMdbX3Snv";
-
 #$dbhost = "sql.downloaddeimieisogni.it";
-#$dbname = "downloaddeimieisogniit";
-#$dbnamephpbb = "downloaddeimieisogniit";
-#$dbuser = "downuser";
-#$dbpass = "Z9mAC#b";
+$dbname = "downloaddeimieisogniit";
+$dbnamephpbb = "downloaddeimieisogniit";
+$dbuser = "downuser";
+$dbpass = "Z9mAC#b";
 
 include($root_path . "include/class.gestdb.php");
 $gestdb = new gestdb();
