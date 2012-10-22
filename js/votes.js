@@ -25,7 +25,7 @@ $(function() {
 			$(this).fadeOut(300);
 			$.ajax({
 					type: "POST",
-					url: "ajax_vote.php",
+					url: "up_vote.php",
 					data: dataString,
 					cache: false,
 					success: function(html)
