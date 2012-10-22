@@ -1,0 +1,25 @@
+.box
+{
+	background-color:#303030; 
+	/*padding:6px;
+	height:17px; */
+}
+
+.on_img
+{
+	background-image:url(on.gif);
+	background-repeat:no-repeat;
+	padding-left:35px;
+	cursor:pointer;
+	width:60px;
+}
+
+.over_img
+{
+	background-image:url(over.gif);
+	background-repeat:no-repeat;
+	padding-left:35px;
+	cursor:pointer;
+	width:60px;
+}
+
