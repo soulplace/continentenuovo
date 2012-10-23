@@ -1,7 +1,5 @@
 <?
-//error reporting, da commentare in produzione
-error_reporting(E_ALL | E_STRICT);
-ini_set('display_errors','On');
+error_reporting(0);
 
 /******* VARIABILI DI CONTROLLO *************/
 define('BAND_REGISTRATION',true);
@@ -36,8 +34,9 @@ $phpbb_url = "/forum/";
 ## directory di base dell'applicazione
 ## forse si puo' togliere
 $root_path = '/home/samu2012/downloaddeimieisogni.it/';
-$web_url = "/continentenuovo/";
 
+
+$web_url = "/continentenuovo/";
 #link al form di registrazioni phpbb
 ###
 ### FUNZIONI
@@ -85,8 +84,13 @@ function miologout($root_path, $redir, $firstpage){
 # $dbname = nome db
 # $dbuser = utente db
 # $dbpass = pwd db
-$dbhost = "localhost";
-#$dbhost = "sql.downloaddeimieisogni.it";
+#$dbhost = "localhost";
+#$dbname = "continentenuovo";
+#$dbnamephpbb = "phpbb3";
+#$dbuser = "continentenuovo";
+#$dbpass = "bnqtj8uEMdbX3Snv";
+
+$dbhost = "sql.downloaddeimieisogni.it";
 $dbname = "downloaddeimieisogniit";
 $dbnamephpbb = "downloaddeimieisogniit";
 $dbuser = "downuser";

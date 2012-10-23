@@ -166,19 +166,18 @@ INSERT INTO `users` (`id_phpbb`, `role`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `votes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_voter` mediumint(8) DEFAULT NULL,
   `id_voted` int(11) DEFAULT NULL COMMENT 'id della tabella songs',
   `ip` varchar(16) DEFAULT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id_voter`, `id_voted`, `time`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dump dei dati per la tabella `votes`
 --
 
-INSERT INTO `votes` (`id`, `id_voter`, `id_voted`, `ip`, `time`) VALUES
-(1, 5, 1, '192.168.0.31', '2012-05-23 14:45:17'),
-(2, 4, 1, '192.168.0.31', '2012-05-23 14:56:34'),
-(3, 7, 1, '192.168.0.31', '2012-05-23 14:56:34');
+INSERT INTO `votes` (`id_voter`, `id_voted`, `ip`, `time`) VALUES
+(5, 1, '192.168.0.31', '2012-05-23'),
+(4, 1, '192.168.0.31', '2012-05-23'),
+(7, 1, '192.168.0.31', '2012-05-23');

@@ -25,8 +25,17 @@ $sql = $gestdb -> value($select,$db_sito);
 $tpl = new HTML_Template_IT($root_path . "/templates/default/");
 $tpl->loadTemplatefile("page.tpl.htm", true, true);
 
-$tpl->setVariable("SID", $_REQUEST['sid']);
-$tpl->setVariable("IDBAND", $id_utente);
+if ($loggato){
+
+	if ($_REQUEST['sid']){
+		$tpl->setVariable("SID", $_REQUEST['sid']);
+	} else {
+		$tpl->setVariable("SID", $user->session_id);
+	}
+}
+if ( (VOTE_SESSION)){
+	$tpl->setVariable("IDBAND", $id_utente);
+}
 $tpl->setVariable("NOME_BAND", $result[0]['nome_band']) ;
 $tpl->setVariable("BIO", $result[0]['bio']) ;
 $tpl->setVariable("IMAGE", $result[0]['image']) ;

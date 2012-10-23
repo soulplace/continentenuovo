@@ -1,8 +1,6 @@
 <?php
 
 include('include/basic.php');
-/*
-#include_once('forum/common.php');
 
 
 $user->session_begin();
@@ -12,19 +10,19 @@ $user->setup();
 if ($user->data['user_id'] == ANONYMOUS) {
         $loggato = false;
 } else {
-*/
         $loggato = true;
-//}
+}
 
 $idband=0;
-$idband=$_POST['id'];
+$idband=$_POST['idband'];
 $result=mysql_query("select count(*) as love from votes where id_voted='$idband'");
 $row=mysql_fetch_array($result);
 $votes=$row['love'];
+$sid=$_POST['sid'];
 
-if (($_SERVER["REQUEST_METHOD"] == "POST") && ($loggato)){
+if ( ($sid) && (VOTE_SESSION)){
 	$username = $user->data['username_clean'];
-	$today = date("%d/%m/%Y");
+	$today = date("Y/m/d");
 	$ip=$_SERVER['REMOTE_ADDR'];
 
 	$sql = "insert into votes (id_voter, time, ip, id_voted) values (" . $user->data["user_id"] . ",'" . $today . "','" . $ip . "'," . $idband . ");";

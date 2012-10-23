@@ -31,3 +31,39 @@ if ($user->data['user_id'] == ANONYMOUS) {
 <div id="content">
 	<div class="container">
 	<?include_once($root_path . "include/sidebar.php");?>
+
+<? if(preg_match("/page/i",$_SERVER["PHP_SELF"])){ ?>
+<script type="text/javascript" src="js/jquery.validate.js"></script> 
+<script type="text/javascript" src="js/jquery.formvote.js"></script>
+<script type="text/javascript">
+$('document').ready(function(){
+	$('#form').validate({
+		rules:{
+                        "idband":{
+                            required:true
+			},
+                        "sid":{
+                            required:true
+                        }},
+		messages:{
+			"idband":{
+                            required:"Votazione non ancora disponibile"
+			},
+			"sid":{
+                            required:"Registrati per poter votare!"
+                }},
+		submitHandler: function(form){
+			$(form).ajaxSubmit({
+				target: '#preview', 
+				success: function() { 
+					$('#formbox').slideUp('fast'); 
+				} 
+			}); 
+		}
+                
+	})
+});
+</script> 
+
+
+<? } ?>
