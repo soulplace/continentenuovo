@@ -1,7 +1,6 @@
 <?php
 
 include_once('forum/common.php');
-echo "ciao\n\n";
 
 $user->session_begin();
 $auth->acl($user->data);
@@ -14,12 +13,12 @@ if ($user->data['user_id'] == ANONYMOUS) {
 }
 
 $idband=0;
-$idband=$_REQUEST['id'];
+$idband=$_POST['id'];
 $result=mysql_query("select count(*) as love from votes where id_voted='$idband'");
 $row=mysql_fetch_array($result);
 $votes=$row['love'];
 
-if ($loggato){
+if (($_SERVER["REQUEST_METHOD"] == "POST") && ($loggato)){
 	$username = $user->data['username_clean'];
 	$today = date("%d/%m/%Y");
 	$ip=$_SERVER['REMOTE_ADDR'];
@@ -29,15 +28,11 @@ if ($loggato){
 	if ($res) {
 		$votes++;
 		echo 'Grazie per il voto';
-
-?>
-<span class="on_img" align="left"><?php echo $votes; ?></span>
-<?php
 	} else {
 		echo 'Band già votata per oggi';
 	}
 } else {
-		echo 'Registrati per votare';
+	echo 'Registrati per votare';
 }
 ?>
 
