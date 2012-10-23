@@ -1,17 +1,37 @@
 <!-- BEGIN page -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-<script type="text/javascript" src="jquery.form.js"></script>
+<script type="text/javascript" src="js/jquery.validate.js"></script> 
+<script type="text/javascript" src="js/jquery.formvote.js"></script>
 <script type="text/javascript">
-	$('document').ready(function()
-	{
-		$('#form').ajaxForm( {
-			target: '#preview', 
-			success: function() { 
-				$('#formbox').slideUp('fast'); 
-			} 
-		}); 
-	});
-</script>
+$('document').ready(function(){
+	$('#form').validate({
+		rules:{
+                        "idband":{
+                            required:true
+			},
+                        "sid":{
+                            required:true
+                        }},
+		messages:{
+			"idband":{
+                            required:"Errore interno, band inesistente"
+			},
+			"sid":{
+                            required:"Registrati per poter votare!"
+                }},
+		submitHandler: function(form){
+			$(form).ajaxSubmit({
+				target: '#preview', 
+				success: function() { 
+					$('#formbox').slideUp('fast'); 
+				} 
+			}); 
+		}
+                
+	})
+});
+</script> 
+
 
 <div class="col-2">
 	<div class="top-bg-png png"></div>
@@ -20,9 +40,9 @@
 			<div class="indent">
 				<div class="container">
 					<h3>{NOME_BAND}</h3>
-						<div id="preview"> </div>
-						<div id="voteform"> 
-							<form id="form" action="vote.php" method="post">
+						<div id="preview">{VOTES}</div>
+						<div id="formbox"> 
+							<form id="form" action="./vote.php" method="post">
 								<input type=hidden name="sid" value="{SID}">
 								<input type=hidden name="idband" value="{IDBAND}">
 								<input type="submit" value="Vota">

@@ -1,6 +1,9 @@
 <?php
 
-include_once('forum/common.php');
+include('include/basic.php');
+/*
+#include_once('forum/common.php');
+
 
 $user->session_begin();
 $auth->acl($user->data);
@@ -9,8 +12,9 @@ $user->setup();
 if ($user->data['user_id'] == ANONYMOUS) {
         $loggato = false;
 } else {
+*/
         $loggato = true;
-}
+//}
 
 $idband=0;
 $idband=$_POST['id'];
@@ -29,11 +33,10 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") && ($loggato)){
 		$votes++;
 		echo 'Grazie per il voto';
 	} else {
-		echo 'Band già votata per oggi';
+		echo 'Band gi&agrave; votata per oggi';
 	}
 } else {
 	echo 'Registrati per votare';
 }
+echo ' ' . $votes . ' voti';
 ?>
-
-
